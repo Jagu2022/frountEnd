@@ -1,3 +1,4 @@
-console.log("hello")
-console.log("i love javaScript")
-console.log("i love react")
+function hello(){
+    console.log("hello")
+}
+hello()
