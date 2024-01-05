@@ -1,4 +1,4 @@
-function hello(){
-    console.log("hello")
+function hello(name){
+    console.log(name)
 }
-hello()
+hello("bharath")
