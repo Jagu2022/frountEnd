@@ -16,29 +16,130 @@
         var c =  b**6; //2x2x2x2x2x2
         console.log(c)
 
+        //Given var x = “Edupoly” and var y = “Training”. Print “Edupoly Training” in the console.
+
         var x = "Edupoly";
         var y = "Training";
-        console.log(x+y)
+        console.log(x+y) //“EdupolyTraining””
+
+        //Find the perimeter of a square having each side 4cm.
 
         var side = 4
         var perimeter = 4 //s*p
-        console.log(side*perimeter)
+        console.log(side*perimeter) //16
+
+        //Find the perimeter of a rectangle of length 50cm and breadth 35cm.
 
         var length = 50;
         var breadth = 35;
         var lb = length + breadth
         var pr = 2*lb //2(l+b)
-        console.log(pr)
+        console.log(pr) //170
+
+        //Find the circumference of a circle of radius 20cm. (Take π = 3.14)
 
         var circleOfRadius = 20;
         var pie = 3.14
         var circumference = 2*pie*circleOfRadius // 2pier
-        console.log(circumference)
+        console.log(circumference) //125.60
         
+        //Find the area of a square having each side 12cm.
+
         var squareSide = 12;
         var sqare = 12**2
-        console.log(sqare)
+        console.log(sqare) //144
 
+        //Find the area of a rectangle of length 25cm and breadth 16cm.
+
+        var lengthOfRectangle = 25;
+        var breadthOfRectangle = 16;
+        var areaOfRectangle = lengthOfRectangle*breadthOfRectangle
+        console.log(areaOfRectangle) //400
+
+        //Find the area of a circle of radius 3.75cm.
+
+        var r = 3.75
+        var AreaOfCircle = 22/7 * r**2
+        console.log(AreaOfCircle) //44.19642857142857
+
+        //Given the marks of 3 subjects as 67,48 and 74. Print the average marks of the 3 subjects.
+
+        var marks = 67+48+74
+        var averageOfMarks = marks/3
+        console.log(averageOfMarks)//63
+
+        //Given the cost of a product as ₹538.56, add 18% GST to it and print the total cost.
+        var product = 538.56
+        var gst = 96.941
+        console.log(product+gst) //635.501
+
+        //Given a variable var x = 48. Decrement its value by 1.
+        var value = 48
+        value-=1
+        console.log(value)
+
+        //Write a script to swap two numbers;
+        var one = 10
+        var two = 20
+        var three
+        console.log(`before swapping one is ${one}`) //10
+        console.log(`before swapping two is ${two}`) //20
+
+        three = one //three = 10
+        one = two // one = 20
+        two = three // two = 10
+
+        console.log(`after swapping one is ${one}`) //20
+        console.log(`after swapping two is ${two}`) //10
+
+        //Write a script to swap two numbers without using 3rd variable (please use *,%,/ not + and -)
+
+        var first = 10
+        var second = 20
+        first = second
+        second=first/2
+        console.log(first , second)
+
+        //Write a program to print the reminder of a division
+        var divisor = 85
+        var divident = 20
+        var reminder = divisor%divident
+        console.log(reminder) //5
+
+        //Write a program to print the simple interest rate of given P T R values
+        var price = 500
+        var time = 2
+        var rate = 10
+        var intrest = price*time*rate/100
+        console.log(intrest) //100
+
+        //Write a program to print the max of given two numbers using ternary operator
+        var valueOne = 54865
+        var valueTwo = 55465
+        var maxValue = valueOne > valueTwo ? (`${valueOne} is max`) : (`${valueTwo} is max`)
+        console.log(maxValue) //valueOne is max value
+
+        //Write a program to print the max of given three numbers using ternary operator
+
+        var valueA = 15249
+        var valueB = 15498
+        var valueC = 15387
+        var max = valueA > valueB ? (`${valueA} is max`) 
+        : valueB > valueC ? (`${valueB} is max`) 
+        : (valueC)
+
+        console.log(max) //valueB is max value
+
+        //Find the area of a square for given length of a side
+        var sideSquare = prompt("enter side length of square: ")
+        var areaOfSquare = sideSquare**2
+        console.log(areaOfSquare)
+
+        //Find the area of a rectangle for given length and breadth
+        var length2 = prompt("enter length of area of rectangle: ")
+        var breadth2 = prompt("enter breadth of area of rectangle: ")
+        var areaOfRectangle2 = length2*breadth2
+        console.log(areaOfRectangle2)
     </script>
 </body>
 </html>
