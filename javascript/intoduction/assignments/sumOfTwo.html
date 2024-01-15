@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--
+        Write a JavaScript program to perform addition, subtraction, 
+        multiplication and division of two numbers Expected Output : 
+        Input any two numbers separated by comma : 10,5 The sum of the 
+        given numbers : 15 The difference of the given numbers : 
+        5 The product of the given numbers : 50 The quotient of the 
+        given numbers : 2.000000
+    -->
+    <h1>sum 2 nums </h1>
+    <script>
+        var num1, num2
+        var inp = prompt('enter num')
+        var con = inp.split(",")
+        num1 = +con[0]
+        num2 = +con[1]
+        console.log(num1)
+        console.log(num2)
+        sum = parseInt(num1+num2)
+        var dif = num1 - num2
+        var product = num1 * num2
+        var quotient = num1 / num2
+        console.log(`sum ${sum}`)
+        console.log(`dif ${dif}`)
+        console.log(`product ${product}`)
+        console.log(`quotient ${quotient}`)
+    </script>
+</body>
+</html>

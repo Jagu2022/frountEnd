@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--
+        If the total selling price of 15 items 
+        and the total profit earned on them is input through the keyboard, 
+        write a program to find the cost price of one item.
+    -->
+    <h1>item price</h1>
+    <script>
+        var sellingPrice = +prompt("selling pirce of 15 items: ")
+        var profit = +prompt("profit: ")
+        var  itemPrice = (sellingPrice - profit) / 15
+        console.log(` sellingPrice = ${sellingPrice}`)
+        console.log(` profit = ${profit}`)
+        console.log(` itemPrice = ${itemPrice}`)
+    </script>
+</body>
+</html>

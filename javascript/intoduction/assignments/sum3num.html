@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--
+        Write a program in JavaScript to calculate the sum of three 
+        numbers with getting input in one line separated by a comma. 
+        Expected Output : Input three numbers separated by 
+        comma : 5,10,15 The sum of three numbers : 30
+    -->
+    <h1>sum 3 nums </h1>
+    <script>
+        var num1, num2, num3
+        var inp = prompt('enter num')
+        var con = inp.split(",")
+        num1 = +con[0]
+        num2 = +con[1]
+        num3 = +con[2]
+        // console.log(num1)
+        // console.log(num2)
+        // console.log(num3)
+        sum = parseInt(num1+num2+num3)
+        console.log(sum)
+    </script>
+</body>
+</html>
