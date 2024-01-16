@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--
+        check a number divisble by 7
+    -->
+    <h1>if else statements</h1>
+    <script>
+        // var num = +prompt("enter a number: ")
+        // if(num%7 === 0) {
+        //     console.log(`${num} is divisable by 7`)
+        // }else{
+        //     console.log(`${num} is not divisable by 7`)
+        // }
+
+        // var n = 97
+        // var i = 1
+        // console.log(` the factors of ${n}`)
+        // while(i <= n) {
+        //     if(n > 96) {
+        //         console.log("not a valid number")
+        //     }
+        //     else{
+        //         if(n % i ==0 ) {
+        //             console.log(i)
+        //         }       
+        //     }
+        //     i=i+1
+        // }
+
+        // var n = 21
+        // if(n%3 == 0) {
+        //     console.log('it is multiple with 3')
+        // }else{
+        //     console.log("it is not multiple with 3")
+        // }
+
+        // var n = -1
+        // if(n>=1 || n==0) {
+        //     console.log(`${n} is posive number`)
+        // }else{
+        //     console.log(`${n} is negative posive number`)
+        // }
+
+        // var n = 984
+        // var digit = n.toString().split('')
+        // console.log(digit)
+        // for(var i=0; i<digit.length; i++){
+        //     // console.log(digit[i])
+        //     if(digit[i] == 4) {
+        //         console.log("4 was found in your number")
+        //     }
+        // }
+
+        // var n = 999
+        // if(n>=100 && n<1000) {
+        //     console.log('it is 3 digit number')
+        // }else{
+        //     console.log('it is not 3 digit number')
+        // }
+
+        // var n = 4
+        // if(n%2===0) {
+        //     console.log('it is even number')
+        // }else{
+        //     console.log('it is odd number')
+        // }
+
+        // var n1 = 5002
+        // var n2 = 5001
+        // if(n1<n2) {
+        //     console.log('n1 is least number')
+        // }else{
+        //     if(n1 === n2) {
+        //     console.log('n1 is equal to n2')
+        //     }else{
+        //         console.log('n2 is least number')
+        //     }
+        // }
+
+        // var n1 = 321
+        // var n2 = 5461
+        // var n1s = n1.toString().split('').sort().join('').toString()
+        // var n = +n1s
+        // var n2s = n2.toString().split('').sort().join('').toString()
+        // var N = +n2s
+        // console.log(n)
+        // console.log(N)
+       
+        // var a = 608
+        // var b = 608
+        // var c = 609
+        // if(a>b) {
+        //     console.log('a is greater then b & c')
+        // }else{
+        //     if(b>c) {
+        //         console.log('b is greater then a & c ')
+        //     }else{
+        //         if(a == b & b == c && c == a) {
+        //             console.log('3 values are same')
+        //         }else{
+        //             console.log('c is greater then a & b')
+        //         }
+        //     }
+        // }
+
+        // var a = 10
+        // var b = 8
+        // var c = 7
+        // var small, meddle, last
+        
+        // if(a<b && a<c) {
+        //     small = a
+        //     if(b<c){
+        //         meddle = b
+        //         last = c
+        //     }else{
+        //         meddle = c
+        //         last = b
+        //     }
+        // }else if (b<c && b<a) {
+        //     small = b
+        //     if(a<c) {
+        //         meddle = a
+        //         last = c
+        //     }else{
+        //         meddle = c
+        //         last = a
+        //     }
+        // }else{
+        //     small = c
+        //     if(a<b){
+        //         meddle = a
+        //         last = b
+        //     }else{
+        //         meddle = b
+        //         last = a
+        //     }
+        // }
+        // console.log(small,meddle,last)
+
+        // var a = 200
+        // var b = 300
+        // var c = 250
+        // var high,medium,low
+
+        // if(a>b && a>c) {
+        //     high = a
+        //     if(b>c) {
+        //         medium = b
+        //         low = c
+        //     }else{
+        //         medium = c
+        //         low = b
+        //     }
+        // }else if(b>c && b>a) {
+        //     high = b
+        //     if(c>a) {
+        //         medium = c
+        //         low = a
+        //     }else{
+        //         medium = a
+        //         low = c
+        //     }
+        // }else{
+        //     if(c>a && c>b) {
+        //         high = c
+        //         if(a>b) {
+        //             medium = a
+        //             low = b
+        //         }else{
+        //             medium = b
+        //             low = a
+        //         }
+        //     }
+        // }
+        // console.log(high,medium,low)
+
+        // var english = 90
+        // var math = 40
+        // var science = 40
+        // var total = english + math + science
+        // var percentage = total*100 / 300
+        // console.log(percentage)
+        // if(percentage>60 && percentage<100) {
+        //     console.log("distinction")
+        // }else if(percentage>50 && percentage<60) {
+        //     console.log("1st class")
+        // }else if(percentage > 50 && percentage <50){
+        //     console.log("2nd clss")
+        // }
+        // else{
+        //     console.log('fail')
+        // }
+
+        // var vowel = a,e,i,o,u
+        // //var consonants = b, c, d, f, g, h, j, k, l, m, n, p, q, r, s, t, v, w, x, y, z 
+        // var a = "a"
+        // if(a == "a" || a == "e" || a == "i" || a == "o" || a == "u") {
+        //     console.log(`${a} is vowel`)
+        // } else {
+        //     console.log( `${a} is consonants` )
+        // }
+
+        var a = "sbk"
+        console.log(typeof a)
+        let regex = /^[a-zA-Z]+$/;
+
+        if(regex.test(a)){
+            console.log("alphabet")
+        }else{
+            console.log("not alphabet")
+        }
+        
+    </script>
+</body>
+</html>
