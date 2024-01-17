@@ -207,16 +207,169 @@
         //     console.log( `${a} is consonants` )
         // }
 
-        var a = "sbk"
-        console.log(typeof a)
-        let regex = /^[a-zA-Z]+$/;
+        // var a = "sbk"
+        // console.log(typeof a)
+        // let regex = /^[a-zA-Z]+$/;
 
-        if(regex.test(a)){
-            console.log("alphabet")
-        }else{
-            console.log("not alphabet")
-        }
+        // if(regex.test(a)){
+        //     console.log("alphabet")
+        // }else{
+        //     console.log("not alphabet")
+        // }
+
+        // var l = "@"
+        // var specialChars = /[`!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~]/;
+        // if(l === parseInt(l)){
+        //     console.log('it is number')
+        // }else{
+        //     if(specialChars.test(l)) {
+        //         console.log('it is special character')
+        //     }else{
+        //         if(l === l.toLowerCase()) {
+        //             console.log('l is lower case')
+        //         }else{
+        //             if(l === l.toUpperCase()) {
+        //                 console.log('l is upper case')
+        //             }   
+        //         }
+        //     }
+        // }
         
+        // var year  = 2020
+        // if(year % 4 ==0 ){
+        //     console.log(`${year} is a leap year`)
+        // }else{
+        //     console.log("it is not leap year")
+        // }
+
+        // var d = 17
+        // var date = new Date()
+        // console.log(d)
+        // if (d == date.getDate()){
+        //     console.log("it is correct")
+        // }else{
+        //     console.log('it is not correct')
+        // }
+
+        // var age = 18
+
+        // if(age >= 18 && age <= 100) {
+        //     console.log("you are eligible")
+        // }else{
+        //     console.log('you ar not eligible')
+        // }
+
+        // var n = 1
+        // if(n >= 1){
+        //     console.log('it is positvie number')
+        // }else{
+        //     if(n < 0 ){
+        //         console.log('it is negitive number')
+        //     }else(
+        //         console.log('it is zero')
+        //     )
+        // }
+
+        // var n = 190
+        // if(n % 5 ===0 && n % 11){
+        //     console.log("it is divisible by 5 & 11")
+        // }else{
+        //     console.log('it is not divisible by  5 & 11')
+        // }
+
+        // var a = prompt('enter any alphabet')
+        // let regex = /^[a-zA-Z]+$/;
+
+        // if(regex.test(a)){
+        //     if(a == "A" || a == "E" || a == "I" || a == "O" || a == "U") {
+        //         console.log("it is vowel")
+        //     }else{
+        //         console.log('it is consonant')
+        //     }
+        // }else{
+        //     console.log(`${a} is not alphabet`)
+        // }
+
+        // var l = prompt('enter any letter')
+        // var specialChars = /[`!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~]/;
+        // let regex = /^[a-zA-Z]+$/;
+
+        // if(Number(l)) {
+        //     console.log('it is number')
+        // }else{
+        //     if(specialChars.test(l)) {
+        //         console.log('it is special character')
+        //     }else{
+        //         if(regex.test(l)){
+        //             console.log('it is alphabet')
+        //         }
+        //     }
+        // }   
+
+        // var l = "sbk"
+
+        // if(l === l.toUpperCase()) {
+        //     console.log('it is upper case')
+        // }else{
+        //     if(l === l.toLowerCase()){
+        //         console.log('it is lower cse')
+        //     }
+        // }
+
+        // var w = +prompt('enter number')
+        // if(w == 0){
+        //     console.log('it is sunday')
+        // }else{
+        //     if(w == 1){
+        //         console.log('it is monday')
+        //     }else{
+        //         if(w == 2){
+        //             console.log('it is tuesday')
+        //         }else{
+        //             if(w == 3){
+        //                 console.log('it is wednesday')
+        //             }else{
+        //                 if(w === 4){
+        //                     console.log("it is thusday")
+        //                 }else{
+        //                     if(w === 5){
+        //                         console.log('it is friday')
+        //                     }else{
+        //                         if(w === 6) {
+        //                             console.log('it is saturday')
+        //                         }
+        //                     }
+        //                 }
+        //             }
+        //         }
+        //     }
+        // }
+
+        // var d1 = new Date("01/01/2024")
+        // var d2 = new Date("02/01/2024")
+        // var d3 = d2.getTime() - d1.getTime()
+        
+        // var d4 = Math.round(d3/(1000*3600*24))
+        // console.log(d4)
+
+        var m = +prompt('enter days')
+        if( m==1 || m==3 || m==5 || m==7 || m==8 || m==10 || m==12 ){
+            console.log("31 days")
+        }else{
+            if(m == 4 || m == 6 || m == 9 || m == 11){
+                    console.log('30 days')
+            }else{
+                if(m = 2){
+                    var year = +prompt('enter year')
+                    if(year%4 ===0){
+                        console.log("29 days")
+                }else{
+                    console.log("28 days")
+                }
+            }
+        }
+        }
+
     </script>
 </body>
 </html>
