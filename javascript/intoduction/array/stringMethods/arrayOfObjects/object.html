@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>array of objects</h1>
+    <script>
+        var students = [
+            {
+                f_name: "bharath",
+                l_name: "kumar",
+                age: 24,
+                place: "tirupati",
+                payed: 30000,
+                gender: 'male'
+            },
+            {
+                f_name: "alliot",
+                l_name: "mr.robot",
+                age: 51,
+                place: "usa",
+                payed: 10000,
+                gender: 'male'
+            },
+            {
+                f_name: "virat",
+                l_name: "kohli",
+                age: 35,
+                place: "delhi",
+                payed: 20000,
+                gender: 'male'
+            },
+            {
+                f_name: "ram",
+                l_name: "charan",
+                age: 38,
+                place: "hyderabad",
+                payed: 22000,
+                gender: 'male'
+            },
+            {
+                f_name: "zndaya",
+                age: 26,
+                place: "usa",
+                payed: 35000,
+                gender: 'female'
+            },
+            {
+                f_name: "jahnavi",
+                l_name: "kapoor",
+                age: 26,
+                place: "mumbai",
+                payed: 45000,
+                gender: 'female'
+            },
+        ]
+        // students.sort((a, b) => {
+        //     if(a.age > b.age){
+        //         return 1
+        //     }else{
+        //         return -1
+        //     }
+        // })
+        // var sum = 0
+        // var map = students.map((e) => {
+
+        //     return sum+=e.payed
+        // })
+        // //console.log(map)
+        // console.log(sum)
+
+        var g = students.filter((each) =>{
+            return each.gender === 'female'
+        })
+        console.log(g)
+    </script>
+</body>
+</html>
