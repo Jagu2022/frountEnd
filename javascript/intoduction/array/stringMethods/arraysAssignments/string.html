@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>work with strings</h1>
+    <script>
+        //Search all occurrences of a character in a given string.
+        // var s = 'bharathh'
+        // var l = s.length-1
+        // var occurrences = []
+        
+        // //console.log(occurrences)
+        // var count = 0
+        // for(var i=0; i<=l; i++) {
+        //     occurrences = 'h'
+        //     if(occurrences == s[i]){
+        //         console.log(s[i])
+        //         count++
+        //     }
+            
+
+        // }
+        // console.log(occurrences, count)
+        // console.log(count)
+
+        //Count occurrences of a character in a given string.
+        // var s = 'bharath'
+        // var l = s.length-1
+        // var char = 'h'
+        // var count = 0
+        // var occurences = []
+        // for(var i=0; i<=l; i++){
+        //     if(char == s[i]){
+        //         occurences.push(i)
+        //     }
+        // }
+        // var occ = occurences.join(', ')
+        // console.log(`${char} in indices of ${occ}`)
+
+    //     var s = 'bharath'
+    //     var l = s.length-1
+    //     var char = 'b'
+    //     var count = 0
+    //     var occurences = 0
+    //     for(var i=0; i<=l; i++){
+    //         if(char == s[i]){
+    //             occurences++
+    //         }
+    //     }
+    //    // var occ = occurences.join(', ')
+    //     console.log(`${char} appears ${occurences} times`)
+
+        //Find the highest frequency character in a string
+        
+        // var s = 'abbcccddddeeeee'
+        // var l= s.length-1
+        // var freq = []
+        // var maxChar
+        // var lowFreqChar
+        // var maxFreq = 0
+        // var lowFreq = Infinity
+        // for(var i=0; i<=l; i++){
+        //     var char = s.charAt(i)
+        //     if(freq[char]){
+        //         freq[char]++
+        //     }else{
+        //         freq[char] = 1
+        //     }
+        // }
+        // console.log(freq)
+        // for(char in freq){
+        //     if(freq[char] >= maxFreq) {
+        //         maxChar = char
+        //         maxFreq = freq[char]
+        //     }
+        // }
+        // console.log(maxChar)
+        // console.log(maxFreq)
+        
+        // for(char in freq){
+        //     if(freq[char] < lowFreq){
+        //         lowFreq = freq[char]
+        //         lowFreqChar = char
+        //     }
+        // }
+        // console.log(lowFreq)
+        // console.log(lowFreqChar)
+
+        //Remove the first occurrence of a character from a string.
+        // var s = 'bharath'
+        // var f =s.slice(1)
+        // var l = s.slice(0,-1 )
+        // //console.log(l)
+        // var d = s.slice(0,0)
+        // console.log(d)
+
+        //Remove all repeated characters from a given string.
+
+        // var s = 'bbjaitie;;s'
+        // var uniq = ''
+        // console.log(s)
+        // var nA = []
+        // for(var i=0; i< s.length-1; i++){
+        //     if(uniq.indexOf(s[i]) === -1) {
+        //         uniq+=s[i]
+        //     }
+        // }
+        // console.log(uniq)
+        
+        //Replace the first occurrence of a character with another in a string.
+        // var s = 'bharath'
+        // var n = s.endsWith('h')
+        // console.log(n)
+        // for(var i=0; i<=s.length-1; i++){
+            
+        // }
+        // //console.log(s)
+
+        //Find the first occurrence of a word in a given string.
+
+        //A String Is an Anagram or Not
+        // var s1 = 'bhara'
+        // var s2 = 'reddy'
+        // var result
+        // if(s1.length != s2.length){
+        //     result = 'not anagram'
+        // }else{
+        //     s1 = s1.split('').sort().join()
+        //     s2 = s2.split('').sort().join()
+        //     s1 == s2
+        //     result = 'it is anagram'
+        // }
+        // console.log(s1)
+        // console.log(s2)
+        // console.log(result)
+
+        // compare two strngs
+
+        // var s1 = 'abcd'
+        // var s2 = 'abcd'
+        // var s3 = s1.localeCompare(s2)
+        // console.log(s3)
+
+        //converst to lowercase to uppercase
+
+        // var s = 'bharath'
+        // //var s = 'bharath'
+        // console.log('original string', s)
+        // var upper = s.toUpperCase()
+        // console.log('upper sting',upper)
+        // var lower = upper.toLowerCase()
+        // console.log('lower sting', lower)
+
+        //toggel case
+
+        // var s = 'this is testing for toggle case'
+        // var m = s.toUpperCase().split(' ').map((e) => {
+        //     return e.at(0).toLowerCase() + e.slice(1)
+            
+        // })
+        // console.log(m.join(' '))
+
+        // var a = "bharath kumar"
+        // var b = a.split(' ').join(' ')
+        // console.log(b)
+
+        //Find a total number of alphabets, digits or special character in a string.
+        //a = 97-122
+        //A = 65-90
+        //! = 33-64
+        //1 = 48 - 57
+        // var s = 'bharath118$%@'
+        // console.log(String.fromCharCode(97))
+        // var a = 0
+        // var d = 0
+        // var sp = 0
+        // for(var i=0; i<=s.length-1; i++){
+        //     // if(a =String.fromCharCode(i)){
+        //     //     console.log(i,a)
+        //     // }
+        //     if(s.charCodeAt(i) >= 97 && s.charCodeAt(i) <=122){
+        //         a++
+        //     }else{
+        //         if(s.charCodeAt(i) >=48 && s.charCodeAt(i) <=57){
+        //             d++
+        //         }else{
+        //             if(s.charCodeAt(i) >=33 && s.charCodeAt(i) <= 64) {
+        //                 sp++
+        //             }
+        //         }
+        //     }
+        // }
+        // console.log('alphabets',a)
+        // console.log('digits',d)
+        // console.log("special characters",sp)
+
+        // var s = 'BhAraTHKUmar1346446'
+        // for(var i=0; i<=s.length-1 ; i++){
+        //     if(s.charCodeAt(i) >= 65 && s.charCodeAt(i) <= 122){
+        //         console.log(s[i])
+        //     }
+        // }
+
+        // var s = 'aeiousbharath'
+        // for(var i=0; i<=s.length-1; i++){
+        //     var char = s.charAt(i)
+        //     if(char === 'a' || char === 'e' || char === 'i' || char === 'o' || char === 'u'){
+        //         console.log(s[i],'it is vowels')
+        //     }else{
+        //         console.log(s[i],'it is consonants')
+        //     }
+        // }
+        
+        //reverse of a sting
+
+        var s = 'bharath'
+        var r = ''
+        for(var i=s.length-1; i>=0; i--){
+            console.log(s[i])
+            r+=s[i]
+        }
+        console.log(r)
+
+
+    </script>
+</body>
+</html>
