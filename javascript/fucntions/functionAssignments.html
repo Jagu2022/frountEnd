@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>javaScript Functions Assignments</h1>
+    <script>
+        //Write a function which can return the sum of two numbers
+    //     function abc(a, b) {
+    //         return a + b
+    //     }
+    //     var sum = abc(45, 67)
+    //     console.log(sum)
+
+    //Write a function which can return the greatest of the three numbers passed in arguments.
+
+    // function compare(a, b, c) {
+    //     if(a>b && a>c) {
+    //         return a
+    //     }else{
+    //         if(b>a && b>c){
+    //             return b
+    //         }else {
+    //             if(c>a && c>b){
+    //                 return c
+    //             }
+    //         }
+    //     }
+    // }
+    // var greatest = compare(50, 40, 30)
+    // console.log(greatest)
+
+    //Write a function which can print the given arguments in ascending order.
+
+    // function sortNum(a, b, c) {
+    //     var lower
+    //     var middle
+    //     var last
+    //     if(a<b && a<c){
+    //         lower = a
+    //         if(b<c){
+    //             middle = b
+    //             last = c
+    //         }else{
+    //             middle = c
+    //             last = b
+    //         }
+    //     }else if(b<a && b<c){
+    //         lower = b
+    //         if(a<c){
+    //             middle = a
+    //             last = c
+    //         }else{
+    //             middle = c
+    //             last = a
+    //         }
+    //     }else{
+    //         lower = c
+    //         if(a<b){
+    //             middle = a
+    //             last = b
+    //         }else {
+    //             middle = b
+    //             last = a
+    //         }
+            
+    //     }
+    //     return `${lower} ${middle} ${last}`
+    // }
+    // var ascending = sortNum(7,8,1) 
+    // console.log(ascending)
+
+    //Write a function which can return the factorial of a number.
+
+    // function fact(a) {
+    //     var f = 1
+    //     for(var i=1; i<=a; i++){
+    //         f = f*i
+    //     }
+    //     return f
+    // }
+    // var factorial = fact(4)
+    // console.log(factorial)
+
+    //Write a function which can to return the reverse of a given number.
+
+    // function rev(a) {
+    //     var r = ''
+    //     for(var i=a; i>=0; i--){
+    //         r += i
+    //     }
+    //     return +r
+    // }
+    // var reverse = rev(4)
+    // console.log(reverse)
+
+    //Write a function which can check a given number is prime number or not
+    
+    // function p(a) {
+    //     if(a<=1){
+    //         return false 
+    //     }
+    //     for(var i=2; i<=a/2; i++){
+    //         if(a%i === 0){
+    //             return false
+    //         }
+    //     }
+    //     return true
+    // }
+    // var a = 2
+    // if(p(a)) {
+    //     console.log('it is prime number')
+    // }else{
+    //     console.log('it is not prime number')
+    // }
+
+    //Write a function which can check a given number is palindrome or not
+    // function pal(a) {
+    //     var p = a.split('').reverse().join('')
+    //     console.log(p)
+        
+    //     if(p === a){
+    //         return 'it is palindrome'
+    //     }else{
+    //         return 'it is not palindrome'
+    //     }
+    // }
+    // var palindrome = pal('hello')
+    // console.log(palindrome)
+
+    //Write a function to return the number of digits in the given number
+
+    // function num(a) {
+    //     var l = a.toString().length
+    //     console.log(l)
+    // }
+    // var number = num(5463)
+    
+    //Write a function that prints all even numbers between 1 and 20.
+
+    // function e(a) {
+    //     for(var i=0; i<a; i++){
+    //         if(i%2 == 0){
+    //             console.log(`${i} is even number`)
+    //         }
+    //     }
+    // }
+    
+    // e(22)
+
+    //Find all prime numbers between the given interval using functions.
+    
+    // function p(n) {
+    //     if(n<=1) return false
+    //     for(var i=2; i<=n/2; i++){
+    //         if(n%i === 0) {
+    //             return false
+    //         }
+    //     }
+    //     return true
+    // }
+    // var x = 20
+    // for(var i=0; i<=x; i++){
+    //     if(p(i)) {
+    //         console.log(`${i} is prime number`)
+    //     }2+6
+    // }
+
+    //print number is perfect num or not
+
+    // function isPerfect(n) {
+    //     var sum = 1
+    //     for(var i=2; i*i<=n; i++){
+    //         if(n%i == 0){
+    //             //console.log(i)
+    //             if(i*i!=n){
+    //                 sum = sum + i + n/i
+    //             }else{
+    //                 sum+=i
+    //             }
+                
+    //         }
+            
+    //     }
+    //     console.log("sum", sum)
+    //     if(sum == n) {
+    //         return `${n} is perfect number`
+    //     }else{
+    //         return `${n} is not perfect number`
+    //     }
+    // }
+    // var per = isPerfect(85)
+    // console.log(per)
+
+    // function s(n) {
+    //     var temp = n
+    //     var sum = 0
+    //     while(n>0){
+    //         var r = n%10
+    //         var f = 1
+    //         //console.log(r)
+
+    //         for(var i=1; i<=r; i++){
+    //             f= f * i
+    //         }
+    //         sum = sum+f
+    //         //console.log("f", f)
+    //         //console.log('sum', sum)
+    //         n = parseInt(n/10)
+    //     }
+    //     if(temp == sum) {
+    //         console.log(`${temp} is strong number`)
+    //     }
+    // }
+    // var strong = 1000
+    // //console.log(strong)
+    // for(var i=0; i<=strong; i++){
+    //     if(s(i)) {
+    //         console.log(`${i} is strong number`)
+    //     }
+    // }
+
+    //Find the power of any number using recursion.
+     
+    // function power(base, exponent) {
+
+    //     if( exponent ===0 ){
+    //         return 1
+    //     }
+    //     console.log(base)
+    //     //console.log(exponent)
+    //     return base * power(base, exponent-1) //5, 4, 3, 2, 1, 0
+
+        
+        
+    // }
+    // var p = power(2,5)
+    // console.log(p)
+
+
+    //Print all natural numbers between 1 to n using recursion.
+
+    // const sum = (i,n) => {
+    //     if(i>n){
+    //         return
+    //     }
+    //     console.log(i)
+    //     sum(i+1,n)
+    // }
+    // var s = sum(1,10)
+    //console.log(s)
+
+    //Print all even or odd numbers in a given range using recursion.
+
+    // const even = (i, n) => {
+    //     if(i>n) {
+    //         return
+    //     }
+    //     if(i%2 !=0) {
+    //         console.log(i)
+    //     }
+    //     even(i+1, n)
+    //even(1,n)
+        //even(2,n)        
+            //even(3,n)        
+                //even(4,n)        
+                    //even(5,n)        
+
+
+    // }
+    // even(0,5)
+
+    //Sum of all natural numbers between 1 to n using recursion.
+    
+    // const sumNaturalValues  = (i, n) => {
+    //     if(n===0){
+    //         return 1
+    //     }
+    //     console.log(i)
+    //     //console.log(n)
+    //     return i += sumNaturalValues(n, n-1) //0+=5=5, 5+=4=9, 9+=3=12, 12+=2=14, 14+=1=15
+    //     // <!--
+    //     //     0+=sumNaturalValues(5, 4) = i=5, n=4
+    //     //     5+=sumNaturalValues(4, 3) = i=9, n=3
+    //     //     9+=sumNaturalValues(3, 2) = i=12, n=2
+    //     //     12+=sumNaturalValues(2, 1) = i=14, n=1
+    //     //     12+=sumNaturalValues(2, 1) = i=14, n=1
+    //     //     14+=sumNaturalValues(1, 0) = i=15, n=0
+    //     // -->
+    // }
+    // var sum = sumNaturalValues(0, 5)
+    // console.log(sum)
+
+    //Find the sum of all even or odd numbers in a given range using recursion.
+
+    const sum = (i, n) => {
+        //var e = 0
+        if(i>n){
+            return 0
+        }
+        var e = i%2 == 0
+        console.log(i)
+        if(e) {
+            return i + sum(i+2, n)
+        }else{
+            return sum(i+1, n)
+        }
+        
+    }
+    var s = sum(1,10)
+    console.log(s)
+    </script>
+    
+    
+</body>
+</html>

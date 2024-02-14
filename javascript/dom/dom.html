@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        
+    </style>
+</head>
+<body>
+    <!-- <p id="n1">
+        Javascript Basic Coding Introduction Practice assignments.
+        Write a function which can return the sum of two numbers.
+        Write a function which can return the greatest of the three numbers passed in 
+        arguments.
+    </p> -->
+    <h1 class="abc">marvel</h1>
+    <h1 class="abc">deadpool</h1>
+    <h1 class="abc">fox</h1>
+    <script>
+        var color = ['pink', 'brown', 'green']
+        var h = document.querySelectorAll('h1')
+        var abc = document.querySelectorAll('.abc')
+        abc.forEach((e, i) => {
+            console.log(e)
+            e.style.border = '2px solid black'
+            e.style.color= color[i]
+        })
+    </script>
+</body>
+</html> 

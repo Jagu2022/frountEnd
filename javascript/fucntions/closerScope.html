@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>closerScope</h1>
+    <script>
+        // function abc(){
+        //     return function(){
+        //         return 100
+        //     }
+        // }
+        // var x = abc
+        // console.log(x)
+        // var y = x()
+        // console.log(y)
+        // var z = y()
+        // console.log(z)
+
+        //the inner function take the varible from outer function  varible under the closer scope 
+        //fucntion definition binded with closerscope
+        //outer function variable binded to inner funcion varibel
+        
+        // var gv = 100
+        // function outer(){
+        //     var fv = 50
+        //     function inner(){
+                
+        //         console.log(fv)
+        //         fv++
+        //     }
+        //     return inner
+        // }
+        // var x = outer()
+        // console.log(x)
+        // x()
+        // x()
+
+        var s = [10,20,30,40]
+        // for(var i=0; i<=s.length-1; i++){
+        //     setTimeout(()=>{
+        //         alert(i)
+        //     },10000)
+        // }
+
+        // s.forEach((a,i) => {
+        //     setTimeout(() => {
+        //         console.log(i)
+        //     }, 5000);
+        // })
+
+        var br = []
+        // for(var k=0; k<=s.length-1; k++){
+        //     br.push(function(){console.log('hi',k)})
+        // }
+        // console.log(br)
+        s.forEach((e,i) => {
+            br.push(function(){console.log('hi' ,i)})
+        })
+        console.log(br)
+        br[0]()
+        br[1]()
+        // br[1]()
+        // br[2]()
+        // br[3]()
+        //var y = x()
+        //console.log(y)
+    </script>
+</body>
+</html> 
