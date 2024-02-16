@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table,th,td{
+            border: 2px solid black;
+        }
+    </style>
+</head>
+<body>
+    <table id="table" style="width: 100%;">
+
+    </table>
+    <script>
+        var people = [
+            {
+            "firstname": "praveen",
+            "lastname": "gubbala",
+            "age": 36,
+            "gender": "male",
+            "city": "hyd",
+            "salary": 10000
+            },
+            {
+            "firstname": "srikanth",
+            "lastname": "gubbala",
+            "age": 32,
+            "gender": "male",
+            "city": "bengaluru",
+            "salary": 20000
+            },
+            {
+            "firstname": "pradeep",
+            "lastname": "reddy",
+            "age": 21,
+            "gender": "male",
+            "city": "hyd",
+            "salary": 30000
+            },
+            {
+            "firstname": "mounika",
+            "lastname": "mudiraj",
+            "age": 20,
+            "gender": "female",
+            "city": "nalgonda",
+            "salary": 30000
+            },
+            {
+            "firstname": "nikhil",
+            "lastname": "m",
+            "age": 22,
+            "gender": "male",
+            "city": "guntur",
+            "salary": 2000
+            },
+            {
+            "firstname": "riya",
+            "lastname": "bhadouria",
+            "age": 14,
+            "gender": "female",
+            "city": "indore",
+            "salary": 40000
+            }
+        ];
+                
+// Display all the people's data in a table.
+// Display all male and female people in two separate tables.
+// Display only those people in a table who are having salaries more than 20000.
+// Display only the male people who are above the age of 25.
+// Generate UI using document object for the given Array of Objects
+
+        var t = document.getElementById('table')
+        var thOne = document.createElement('th')
+        thOne.innerHTML = 'firstname'
+        t.append(thOne)
+
+        var thTwo = document.createElement('th')
+        thTwo.innerHTML = 'lastname'
+        t.append(thTwo)
+        
+        var thThree = document.createElement('th')
+        thThree.innerHTML = 'age'
+        t.append(thThree)
+        
+        var thFour = document.createElement('th')
+        thFour.innerHTML = 'gender'
+        t.append(thFour)
+        
+        var thFive = document.createElement('th')
+        thFive.innerHTML = 'city'
+        t.append(thFive)
+
+        var thSix = document.createElement('th')
+        thSix.innerHTML = 'salary'
+        t.append(thSix)
+
+        
+
+        people.forEach((e) => {
+        console.log(e)
+        var tr = document.createElement('tr')
+        var tdOne = document.createElement('td')
+        var tdTwo = document.createElement('td')
+        var tdThree = document.createElement('td')
+        var tdFour = document.createElement('td')
+        var tdFive = document.createElement('td')
+        var tdSix = document.createElement('td')
+
+        tdOne.innerHTML = e.firstname
+        tdTwo.innerHTML = e.lastname
+        tdThree.innerHTML = e.age
+        tdFour.innerHTML = e.gender
+        tdFive.innerHTML = e.city
+        tdSix.innerHTML = e.salary
+
+        tr.append(tdOne)
+        tr.append(tdTwo)
+        tr.append(tdThree)
+        tr.append(tdFour)
+        tr.append(tdFive)
+        tr.append(tdSix)
+        t.append(tr)
+        })
+				
+    </script>
+</body>
+</html>

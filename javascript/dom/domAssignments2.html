@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ol id="ol">
+        
+    </ol>
+    <script>
+        // var students = [
+        //     {
+        //     name:'jaya',
+        //     gender:'female',
+        //     place:'gachibowli',
+        //     },
+        //     {
+        //     name:'dasu',
+        //     gender:'male',
+        //     place:'kphb'
+        //     },
+        //     {
+        //     name:'swati',
+        //     gender:'female',
+        //     place:'pune'
+        //     },
+        //     {
+        //     name:'pallavi',
+        //     gender:'female',
+        //     place:'assam'
+        //     },
+        //     {
+        //     name:'kiran',
+        //     gender:'male',
+        //     place:'kondapur'
+        //     },
+        //     {
+        //     name:'thirumala',
+        //     gender:'male',
+        //     place:'madhapur'
+        //     },
+        //     {
+        //     name:'priya',
+        //     gender:'female',
+        //     place:'hitech'
+        //     },
+        // ]
+        // console.log(students)
+
+        // var ul = document.getElementById('ul')
+        // console.log(ul)
+        // students.forEach((e) => {
+        //     var liOne = document.createElement('li')
+        //     liOne.innerHTML = e.name
+        //     var ulOne = document.createElement('ul')
+        //     var liTwo = document.createElement('li')
+        //     var liThree = document.createElement('li')
+        //     liTwo.innerHTML = e.gender
+        //     liThree.innerHTML = e.place
+
+        //     ulOne.append(liTwo)
+        //     ulOne.append(liThree)
+        //     liOne.append(ulOne)
+        //     ul.append(liOne)
+        // })
+
+        var students = [
+            {
+                "firstname": "praveen",
+                "age": 36,
+                "subjects":['angular','nodejs','reactjs','java']
+            }, 
+            {
+                "firstname": "srikanth",
+                "age": 32,
+                "subjects":['react','mongodb']
+            }, 
+            {
+                "firstname": "pradeep",
+                "age": 21,
+                "subjects":['express','mongoose','python']
+            }
+        ]
+
+        var ol = document.getElementById('ol')
+        
+        students.forEach((e) => {
+
+            var liOne = document.createElement('li')
+            liOne.innerHTML = e.firstname
+            ol.append(liOne)
+
+            var olTwo = document.createElement('ol')
+
+            e.subjects.forEach((s) => {
+                
+                var liTwo = document.createElement('li')
+                liTwo.innerHTML = s
+                olTwo.append(liTwo)
+                
+            })
+
+            ol.append(olTwo)
+        })
+    </script>
+</body>
+</html>
