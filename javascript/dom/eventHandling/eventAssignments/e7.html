@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img{
+            width: 100px;
+            height: 200px;
+        }
+        #d{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        button{
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+    <div id="d">
+        <img id="i" src="off.png"/>
+        <button onclick="toggle(event)">on</button>
+    </div>
+    <script>
+        var i = document.getElementById('i')
+        const toggle = (e) => {
+            if(e.target.innerText === 'on'){
+                e.target.innerText = 'off'
+                i.src = 'on.png'
+            }else{
+                e.target.innerText = 'on'
+                i.src = 'off.png'
+            }
+        }
+    </script>
+</body>
+</html>

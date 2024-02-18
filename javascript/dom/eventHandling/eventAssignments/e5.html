@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .d{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="d">
+        <h3 style="color: red;">like and dislike button</h3>
+        <div>
+            <button style="color: mediumseagreen;" onclick="like(event)">like</button>
+            <span id="sp1">0</span>
+            <br/>
+            <br/>
+            <br/>
+            <button style="color: red;" onclick="dislike(event)">dislike</button>
+            <span id="sp2">0</span>
+        </div>
+        
+    </div>
+    <script>
+        const like = (e) => {
+            var sp1 = document.getElementById('sp1')
+            sp1.innerHTML++
+            console.log('like')
+        }
+
+        const dislike = (e) => {
+            var sp2 = document.getElementById('sp2')
+            sp2.innerHTML++
+            console.log('dislike')
+        }
+    </script>
+</body>
+</html>

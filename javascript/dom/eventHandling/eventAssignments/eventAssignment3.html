@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #d{
+            border: 3px solid black;
+            height: 100px;
+            width: 120px;
+        }
+        .p{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="d">
+        <p class="p">true</p>
+    </div>
+    <button onclick="toggle(event)">
+        true/false
+    </button>
+    <script>
+        // const toggle = (e) => {
+            
+        //     if(e.target.innerText === 'on') {
+        //         e.target.innerHTML = 'off'
+        //     }else{
+        //         e.target.innerHTML = 'on'
+        //     }
+        // }
+        const toggle = (e) => {
+            console.log('hi')
+            var p = document.querySelector('.p')
+            if(p.innerHTML === 'true'){
+                p.innerHTML = 'false'
+            }else{
+                p.innerHTML = 'true'
+            }
+        }
+    </script>
+</body>
+</html>

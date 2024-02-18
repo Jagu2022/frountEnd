@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img{
+            height: 120px;
+            width: 200px;
+        }
+        div{
+            display: flex;
+            
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <img src="pic1.jpg" id="pic1" onmouseover="change(event)" />
+        <img src="pic2.jpg" id="pic2" onmouseover="change(event)" />
+        <img src="pic3.jpg" id="pic3" onmouseover="change(event)" />
+    </div>
+    <br/>
+    <br/>
+    <br/>
+    <img id="i" src='pic1.jpg'/>
+
+    <script>
+        var i = document.getElementById('i')
+        const change = (e) => {
+            i.src = e.target.src
+        }
+    </script>
+</body>
+</html>

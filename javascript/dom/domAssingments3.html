@@ -7,11 +7,16 @@
     <style>
         table,th,td{
             border: 2px solid black;
+            margin: 10px;
         }
     </style>
 </head>
 <body>
-    <table id="table" style="width: 100%;">
+    <table id="table" style="width: 80%;">
+
+    </table>
+
+    <table id="table2" style="width: 80%">
 
     </table>
     <script>
@@ -70,9 +75,10 @@
 // Display all male and female people in two separate tables.
 // Display only those people in a table who are having salaries more than 20000.
 // Display only the male people who are above the age of 25.
-// Generate UI using document object for the given Array of Objects
 
         var t = document.getElementById('table')
+        var t2 = document.getElementById('table2')
+
         var thOne = document.createElement('th')
         thOne.innerHTML = 'firstname'
         t.append(thOne)
@@ -97,32 +103,84 @@
         thSix.innerHTML = 'salary'
         t.append(thSix)
 
+        var thOne2 = document.createElement('th')
+        thOne2.innerHTML = 'firstname'
+        t2.append(thOne2)
+
+        var thTwo2 = document.createElement('th')
+        thTwo2.innerHTML = 'lastname'
+        t2.append(thTwo2)
+        
+        var thThree2 = document.createElement('th')
+        thThree2.innerHTML = 'age'
+        t2.append(thThree2)
+        
+        var thFour2 = document.createElement('th')
+        thFour2.innerHTML = 'gender'
+        t2.append(thFour2)
+        
+        var thFive2 = document.createElement('th')
+        thFive2.innerHTML = 'city'
+        t2.append(thFive2)
+
+        var thSix2 = document.createElement('th')
+        thSix2.innerHTML = 'salary'
+        t2.append(thSix2)
+
         
 
         people.forEach((e) => {
         console.log(e)
-        var tr = document.createElement('tr')
-        var tdOne = document.createElement('td')
-        var tdTwo = document.createElement('td')
-        var tdThree = document.createElement('td')
-        var tdFour = document.createElement('td')
-        var tdFive = document.createElement('td')
-        var tdSix = document.createElement('td')
+        if(e.gender === 'male' && e.age > 25) {
+            var tr = document.createElement('tr')
+            var tdOne = document.createElement('td')
+            var tdTwo = document.createElement('td')
+            var tdThree = document.createElement('td')
+            var tdFour = document.createElement('td')
+            var tdFive = document.createElement('td')
+            var tdSix = document.createElement('td')
 
-        tdOne.innerHTML = e.firstname
-        tdTwo.innerHTML = e.lastname
-        tdThree.innerHTML = e.age
-        tdFour.innerHTML = e.gender
-        tdFive.innerHTML = e.city
-        tdSix.innerHTML = e.salary
+            tdOne.innerHTML = e.firstname
+            tdTwo.innerHTML = e.lastname
+            tdThree.innerHTML = e.age
+            tdFour.innerHTML = e.gender
+            tdFive.innerHTML = e.city
+            tdSix.innerHTML = e.salary
 
-        tr.append(tdOne)
-        tr.append(tdTwo)
-        tr.append(tdThree)
-        tr.append(tdFour)
-        tr.append(tdFive)
-        tr.append(tdSix)
-        t.append(tr)
+            tr.append(tdOne)
+            tr.append(tdTwo)
+            tr.append(tdThree)
+            tr.append(tdFour)
+            tr.append(tdFive)
+            tr.append(tdSix)
+            t.append(tr)
+            }else{
+                if(e.gender === 'female' && e.salary > 20000){
+                    var tr = document.createElement('tr')
+                    var tdOne = document.createElement('td')
+                    var tdTwo = document.createElement('td')
+                    var tdThree = document.createElement('td')
+                    var tdFour = document.createElement('td')
+                    var tdFive = document.createElement('td')
+                    var tdSix = document.createElement('td')
+
+                    tdOne.innerHTML = e.firstname
+                    tdTwo.innerHTML = e.lastname
+                    tdThree.innerHTML = e.age
+                    tdFour.innerHTML = e.gender
+                    tdFive.innerHTML = e.city
+                    tdSix.innerHTML = e.salary
+
+                    tr.append(tdOne)
+                    tr.append(tdTwo)
+                    tr.append(tdThree)
+                    tr.append(tdFour)
+                    tr.append(tdFive)
+                    tr.append(tdSix)
+                    t2.append(tr)
+                }
+            }
+        
         })
 				
     </script>
