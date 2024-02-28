@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>destructuring</h1>
+    <script>
+        var obj1 = {
+            firstName: 'bharath',
+            lastName: 'kumar',
+            address: {
+                pincode: 517501,
+                place: 'tirupati',
+                loc: {
+                    street: 'sapthgircolony',
+                    village: 'tirupati',
+                    doorNo: {
+                        no: '12-494'
+                    }
+                }
+            }
+        }
+
+        var {firstName, lastName, address:{pincode,place,loc:{street, village,doorNo:{no}}}} = obj1
+        console.log(firstName)
+        console.log(lastName)
+        console.log(pincode)
+        console.log(place)
+        console.log(street)
+        console.log(village)
+        console.log(no)
+
+        var ar = [10, 47,96,78,74,65,23,69]
+        var [a,b] = ar
+        console.log(a)
+        console.log(b)
+
+        var [x, y] = [10, 20]
+        var [x,y] = [y,x]
+        console.log(x)
+        console.log(y)
+
+        var f = 100
+        var g = 200
+
+        g = f //100
+        f = f+g //100+100 
+        
+        console.log(f)
+        console.log(g)
+    </script>
+</body>
+</html>

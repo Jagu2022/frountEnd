@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #d{
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+        }
+        #b{
+            border: 3px solid black;
+            padding: 50px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="d">
+        <div id="b">
+            <span id="wicket">0</span>/<span id="score">0</span></span>
+        </div>
+        <div>
+            <span>
+                <button onclick="zero()">zero</button>
+                <button onclick="one()">one</button>
+                <button onclick="two()">two</button>
+                <button onclick="three()">three</button>
+                <button onclick="four()">four</button>
+                <button onclick="five()">five</button>
+                <button onclick="six()">six</button>
+                <button onclick="wicket()">wicket</button>
+            </span>
+        </div>
+    </div>
+    
+
+    <script>
+        var Wicket = document.getElementById('wicket')
+        var score = document.getElementById('score')
+        var runs = 0
+        var w = 0
+
+        function zero(){
+            runs+=0
+            console.log(runs)
+            score.innerText = runs
+        }
+
+        function one(){
+            runs+=1
+            console.log(runs)
+            score.innerText = runs
+        }
+
+        function two(){
+            runs+=2
+            console.log(runs)
+            score.innerText = runs
+        }
+        function three(){
+            runs+=3
+            console.log(runs)
+            score.innerText = runs
+        }
+        function four(){
+            runs+=4
+            console.log(runs)
+            score.innerText = runs
+        }
+        function five(){
+            runs+=5
+            console.log(runs)
+            score.innerText = runs
+        }
+        function six(){
+            runs+=6
+            console.log(runs)
+            score.innerText = runs
+        }
+        function wicket(){
+            w++
+            console.log(w)
+            Wicket.innerText = w
+        }
+
+        
+        
+    </script>
+</body>
+</html>

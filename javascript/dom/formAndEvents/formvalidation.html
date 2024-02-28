@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   
+    <form>
+        <label>name (in caps)</label>
+        <br/>
+        <input onkeyup="nAme(event)" id="n" type="text" placeholder="name" required  />
+        <br/>
+        <br/>
+        <label>email address</label>
+        <br/>
+        <input id="email" type="email"/>
+        <br/>
+        <br/>
+        <label>year (must be in or after 2019)</label>
+        <br/>
+        <input id="year" type="date"/>
+        <br/>
+        <br/>
+        <label>Email: </label>
+        <input id="eml" type="email" placeholder="email address"/>
+        <br/>
+        <label>tel: </label>
+        <input id="tel" type="number" placeholder="number"/>
+        <br/>
+        <label>password:</label>
+        <input id="pwd" type="password" placeholder="password1"/>
+        <br/>
+        <label>password2:</label>
+        <input id="pwd2" type="password" placeholder="password2" required oninvalid="this.setCustomValidity('the password confirmation is different to the password value')" oninput="this.setCustomValidity('')"/>
+        <br/>
+        <button onclick="btn(event)">send</button>
+    </form>
+   
+
+   <script>
+
+    var n = document.getElementById('n')
+    console.log(n)
+    var email =document.getElementById('email')
+    var year =document.getElementById('year')
+    var eml =document.getElementById('eml')
+    var tel =document.getElementById('tel')
+    var pwd =document.getElementById('pwd')
+    var pwd2 =document.getElementById('pwd2')
+    
+    // console.log(name)
+    // console.log(email)
+    // console.log(year)
+    // console.log(eml)
+    // console.log(tel)
+    // console.log(pwd)
+    // console.log(pwd2)
+
+    var ar = []
+    var name
+    function nAme(e){
+        console.log(e)
+        if(e.target.value != e.target.value.toUpperCase()){
+            console.log('ji')
+            e.target.oninvalid='please input your name in caps'
+        }
+    }
+    
+    function btn(e){
+        
+    }
+
+    
+    
+   </script>
+
+</body>
+</html>
