@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <style>
+    
+    </style>
+</head>
+<body>
+    
+    <div id="d"></div>
+    
+    <script type="text/babel">
+        var maleimage="https://i.pinimg.com/736x/2a/4e/8d/2a4e8dab6791ed643d5180bc72167f6d.jpg";
+        var femaleimage="https://cdn.pixabay.com/photo/2014/04/02/14/10/female-306407_640.png";
+        var ar=[]
+        function abc(e) {
+
+            if(e.target.checked===false){
+                var i = ar.indexOf(e.target.value)
+                ar.splice(i,1)
+                document.getElementById('h').innerHTML=ar
+            }else{
+                ar.push(e.target.value)
+                document.getElementById('h').innerHTML=ar
+            }
+
+        }
+      var jh1 = <div>
+                    <input type='checkbox' value='ReactJS' onClick={abc}/>
+                    <label>:ReactJS</label>
+                    <br/>
+                    <input type='checkbox' value='Angular' onClick={abc}/>
+                    <label>:Angular</label>
+                    <br/>
+                    <input type='checkbox' value='nodeJS' onClick={abc}/>
+                    <label>:nodeJS</label>
+                    <br/>
+                    <input type='checkbox' value='Express' onClick={abc}/>
+                    <label>:Express</label>
+                    <br/>
+                    <input type='checkbox' value='Mongodb' onClick={abc}/>
+                    <label>:Mongodb</label>
+                    <br/>
+                    <input type='checkbox' value='MySql' onClick={abc}/>
+                    <label>:MySql</label>
+                    <h1 id='h'></h1>
+                </div>
+      
+      ReactDOM.render(jh1,document.getElementById("d"))
+     </script>
+    
+</body>
+</html>

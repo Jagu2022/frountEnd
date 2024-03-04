@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <style>
+    
+    </style>
+</head>
+<body>
+    
+    <div id="d"></div>
+    
+    <script type="text/babel">
+        var ar = []
+
+        function abc() {
+            var ip = document.getElementById('inp').value
+            ar.push(ip)
+            console.log(ar)
+            genUI()
+        } 
+           
+        var genUI = () => {
+            document.getElementById('ul').innerHTML = ''
+            ar.forEach((e,i) => {
+                
+                var li = document.createElement('li')
+                li.innerHTML=e
+                var btn = document.createElement('button')
+                btn.innerText= 'del'
+                
+                btn.onclick = ()=>{del(i)}
+                li.appendChild(btn)
+                document.getElementById('ul').appendChild(li)
+            })
+        }
+
+        var del = (i)=>{
+            ar.splice(i, 1)
+            //console.log(ar)
+            genUI()
+        }
+        
+      
+        var jh1 = <div>
+                    <input id='inp' type='text' />
+                    <button onClick={abc}>res</button>
+                    <ul id='ul'></ul>
+                </div>
+      
+      
+      ReactDOM.render(jh1,document.getElementById("d"))
+     </script>
+    
+</body>
+</html>
