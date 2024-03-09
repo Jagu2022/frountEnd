@@ -1,0 +1,96 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <style>
+        .d{
+            border: 2px solid black;
+            padding: 10px;
+            margin: 10px;
+        }
+        ul li{
+            list-style: none;
+            margin: 10px;
+            padding: 10px;
+            border: 2px solid black;
+        }
+        
+        .completed{
+            background-color: mediumseagreen;
+        }
+        .notcompleted{
+            background-color: tomato;
+        }
+    </style>
+</head>
+<body>
+    
+    <div id="d"></div>
+    
+    <script type="text/babel">
+
+        const Todo = (props)=> {
+            console.log(props)
+            return(
+                <li className={props.todo.status?'completed': 'notcompleted'}>
+                    {props.todo.title}
+                    <button onClick={()=>{props.del(props.id)}}>de</button>
+                </li>
+            )
+        }
+        
+       
+      const TodoList = () => {
+        
+        const[todos, setTodos] = React.useState([
+            {
+                title: 'html',
+                status: true
+            },
+            {
+                title: 'javaScript',
+                status: true
+            },
+            {
+                title: 'react',
+                status: false
+            },
+            {
+                title: 'redux',
+                status: false
+            },
+            {
+                title: 'css',
+                status: true
+            },
+            {
+                title: 'backend',
+                status: false
+            },
+        ])
+        const del = (id) => {
+            var tempTodo = [...todos]
+            tempTodo.splice(id,1)
+            setTodos(tempTodo)
+        }
+        return(
+            <ul>
+                {
+                    todos.map((todo, i) => {
+                        return <Todo todo={todo} id={i} del={del}/>
+                    })
+                }
+            </ul>
+        )
+      }
+
+       ReactDOM.render(<TodoList/>, document.getElementById('d'))
+     </script>
+</body>
+</html>

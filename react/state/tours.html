@@ -1,0 +1,99 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <style>
+        body{
+            background-color: rgb(232, 237, 239);
+        }
+        .container{
+           
+            padding: 5px;
+            margin: 15px;
+            background-color: white;
+            border-radius: 5px;
+            max-width: 500px;
+            box-shadow: 0px 5px 5px lightgray;
+            
+        }
+        
+        img{
+            width: 100%;
+            height: 250px;
+            background-repeat:no-repeat;
+            background-attachment: fixed;
+        }
+        #container{
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    
+    <div id="d"></div>
+    
+    <script type="text/babel">
+       const App = () => {
+            return(
+                <div id='container'>
+                    <h1>our tours</h1>
+                    <Tour/>
+                </div>
+            )
+       }
+
+       const Tour = () => {
+            var[tour, setTour] = React.useState([])
+            let url = 'https://course-api.com/react-tours-project'
+            const api = async(url) => {
+                var reponse = await fetch(url)
+                var date = await reponse.json()
+                console.log(date)
+                setTour([...date])
+            }
+            React.useEffect(()=> {
+                api(url)
+                
+            },[])
+            const del = (id) => {
+                var temp = [...tour]
+                temp.splice(id, 1)
+                setTour(temp)
+            }
+            return(
+                    <ul>
+                        {
+                            tour.map((e, i) => {
+                                return <div class='container' key={Math.random()}>
+                                            <div>
+                                                <img src={e.image}/>
+                                            </div>
+                                            <div>
+                                                <span>
+                                                    <p>{e.name}</p>
+                                                    <p>{e.price}</p>
+                                                </span>
+                                            </div>
+                                            <div>
+                                                <p>{e.info}</p>
+                                            </div>
+                                            <div id='btn'><button onClick={()=>{del(i)}}>not interested</button></div>
+                                       </div>
+                            })
+                        }
+                    </ul>
+            )
+       }
+       ReactDOM.render(<App/>, document.getElementById('d'))
+     </script>
+</body>
+</html>

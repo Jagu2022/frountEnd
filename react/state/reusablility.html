@@ -1,0 +1,67 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <style>
+        .d{
+            border: 2px solid black;
+            padding: 10px;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+    
+    <div id="d"></div>
+    
+    <script type="text/babel">
+        
+       
+       const App = () => {
+        return(
+            <div>
+                <Counter
+                 x={10}
+                 y={2}
+                 />
+                <Counter 
+                    x={20}
+                    y={5}
+                />
+                <Counter
+                     x={30}
+                     y={100}
+                />
+            </div>
+        )
+       }
+
+       const Counter = ({x,y}) => {
+        const[count, setCount] = React.useState(x)
+        //const[b, setb] = React.useState('kumar')
+        const inc = () => {
+            setCount(count+y)
+        }
+        const dec = () => {
+            setCount(count-1)
+        }
+    
+        return(
+            <div className='d'>
+                <h1>{count}</h1>
+                <button onClick={()=>{inc()}}>inc</button>
+                <button onClick={()=>{dec()}}>dec</button>
+            </div>
+        )
+       }
+
+       ReactDOM.render(<App/>, document.getElementById('d'))
+     </script>
+</body>
+</html>
