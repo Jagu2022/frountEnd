@@ -1,0 +1,63 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sort</title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <style>
+        body{
+            
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        
+    </style>
+</head>
+<body>
+    
+    <div id="d"></div>
+    
+    <script type="text/babel">
+       const App = () => {
+        const[persons, setPersons] = React.useState(['zendaya','bharath','captain america', 'batman', 'deadpool', 'superman', 'ironman'])
+        const add = () => {
+            var item = document.getElementById('i').value
+            setPersons([...persons,item])
+        }
+
+        const ascending = () => {
+            var temp = [...persons]
+            var newPersons = temp.sort()
+            console.log(newPersons)
+            setPersons(newPersons)
+        }
+        const decending = () => {
+            var temp = [...persons]
+            var newPersons = temp.sort((a,b)=> b.localeCompare(a))
+            //console.log(newPersons)
+            setPersons(newPersons)
+        }
+            return (
+                <div>
+                    <h1>React component</h1>
+                    <input type='text' id='i'/>
+                    <button onClick={()=>{add()}}>add</button>
+                    <button onClick={()=>{ascending()}}>Ascending Order</button>
+                    <button onClick={()=>{decending()}}>Decsending Order</button>
+                    
+                    {
+                            persons.map((person) => {
+                                return <li>{person}</li>
+                            })
+                    }
+                </div>
+            )
+       }
+       ReactDOM.render(<App/>, document.getElementById('d'))
+     </script>
+</body>
+</html>

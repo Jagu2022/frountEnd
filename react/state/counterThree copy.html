@@ -1,0 +1,60 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>counter</title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <style>
+        body{
+            
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        
+    </style>
+</head>
+<body>
+    
+    <div id="d"></div>
+    
+    <script type="text/babel">
+
+        const App = () => {
+            //console.log(props)
+            return (
+                <div>
+                    <Counter i={10} y={100}/>
+                    <Counter i={100} y={40}/>
+                    <Counter i={300} y={50}/>
+                </div>
+            )
+        }
+
+       const Counter = ({i,y}) => {
+        const[c, setC] = React.useState(i)
+
+        const inc = () => {
+            setC(c+y)
+        }
+
+        const dec = () => {
+            setC(c-y)
+        }
+
+            return(
+                <div style={{border:'2px solid black', margin: '10px', padding: '10px'}}>
+                    <h1>count: {c}</h1>
+                    <button onClick={()=>{inc()}}>increment</button>
+                    <button onClick={()=>{dec()}}>decrement</button>
+                </div>
+            )
+       }
+       
+       ReactDOM.render(<App/>, document.getElementById('d'))
+     </script>
+</body>
+</html>
