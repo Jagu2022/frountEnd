@@ -1,0 +1,77 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sorting table header click</title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <style>
+        body{
+            
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        .main{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            
+        }
+    </style>
+</head>
+<body>
+    
+    <div id="d"></div>
+    
+    <script type="text/babel">
+
+        const App = () => {
+            const[item, setItem] = React.useState([])
+            const handleItem = (e) => {
+                if(e.target.checked === false){
+                    var temp = [...item]
+                    var i = temp.indexOf(e.target.value)
+                    temp.splice(i, 1)
+                    setItem([...temp])
+                }else{
+                    console.log(e.target.value)
+                var newItem = e.target.value
+                setItem([...item, newItem])
+                console.log(item)
+                }
+            }
+            return(
+                <div style={{border: '5px solid red', padding:'10px'}}>
+                    <input onClick={(e)=>handleItem(e)} value={'react'}  type='checkbox'/> : react &nbsp;&nbsp;&nbsp;
+                    <br/>
+                    <input onClick={(e)=>handleItem(e)} value={'javascript'} type='checkbox'/> : javascript &nbsp;&nbsp;&nbsp;
+                    <br/>
+                    <input onClick={(e)=>handleItem(e)} value={'node'} type='checkbox'/> : node 
+                    <br/>
+                    <input onClick={(e)=>handleItem(e)} value={'mysql'} type='checkbox'/> : mysql 
+                    <br/>
+                    <input onClick={(e)=>handleItem(e)} value={'css'} type='checkbox'/> : css 
+                    <br/>
+                    <input onClick={(e)=>handleItem(e)} value={'html'} type='checkbox'/> : html 
+                    <br/>
+                    <input onClick={(e)=>handleItem(e)} value={'redux'} type='checkbox'/> : redux 
+
+                    <ul>
+                        {
+                            item.map((e) => {
+                                return <li>{e}</li>
+                            })
+                        }
+                    </ul>
+                </div>
+            )
+        }
+        
+       ReactDOM.render(<App/>, document.getElementById('d'))
+     </script>
+</body>
+</html>

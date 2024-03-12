@@ -1,0 +1,122 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sorting table header click</title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <style>
+        body{
+            
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        .main{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            
+        }
+    </style>
+</head>
+<body>
+    
+    <div id="d"></div>
+    
+    <script type="text/babel">
+
+        const App = () => {
+            var [students,setStudents] = React.useState(
+        [
+          {
+            firstname:'Ravi',
+            lastname:'Sastri',
+            gender:'male'
+          },
+          {
+            firstname:'Sachin',
+            lastname:'Tendulkar',
+            gender:'male'
+          },
+          {
+            firstname:'Mithali',
+            lastname:'Raj',
+            gender:'female'
+          },
+          {
+            firstname:'Rohit',
+            lastname:'Sharma',
+            gender:'male'
+          },
+          {
+            firstname:'Smriti',
+            lastname:'Mandhana',
+            gender:'female'
+          },
+          {
+            firstname:'Virat',
+            lastname:'Kohli',
+            gender:'male'
+          },
+        ]);
+        const handleSort = (key, order) => {
+            var temp = [...students]
+            temp.sort((s1, s2)=>{
+                if(order == 'arg') {
+                    if(s1[key] >s2[key]){
+                        return 1
+                    }else{
+                        return -1
+                    }
+                }else{
+                    if(order === 'dsc') {
+                        if(s1[key] > s2[key]) {
+                            return -1
+                        }else{
+                            1
+                        }
+                    }
+                }
+            })
+            // if(order == 'arg') {
+            //     //temp.sort((a,b) => a[key].localeCompare(b[key]))
+                
+            // }else{
+            //     temp.sort((a,b) => b[key].localeCompare(a[key]))
+            // }
+            setStudents(temp)
+        }
+            return(
+                <div style={{border:'1px solid black', margin:'10px'}}>
+                    <h1>students</h1>
+                    <table border='1px'>
+                        <thead>
+                            <th onClick={()=>{handleSort('firstname','arg')}}>first name</th>
+                            <th onClick={()=>{handleSort('lastname','arg')}}>last name</th>
+                            <th onClick={()=>{handleSort('gender','arg')}}>gender</th>
+                        </thead>
+                        <tbody>
+                            {
+                                students.map((e) => {
+                                    return(
+                                        <tr>
+                                            <td>{e.firstname}</td>
+                                            <td>{e.lastname}</td>
+                                            <td>{e.gender}</td>
+                                        </tr>
+                                    )
+                                })
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            )
+        }
+       ReactDOM.render(<App/>, document.getElementById('d'))
+     </script>
+</body>
+</html>

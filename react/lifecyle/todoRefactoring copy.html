@@ -1,0 +1,65 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Refactoring-child-parent-comm-project-todolist</title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <style>
+        body{
+            
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        .main{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            
+        }
+    </style>
+</head>
+<body>
+    
+    <div id="d"></div>
+    
+    <script type="text/babel">
+
+        const Todo = (props) => {
+            return(
+                <div >
+                     <li  style={{border: '1px solid black', padding:'10px', margin:'10px'}}>
+                        {props.todo}
+                        <button onClick={props.del}>delete</button>
+                    </li>
+                </div>
+            )
+        }
+       
+       const Todolist = () => {
+        const[list, setList] = React.useState(['promotions', 'react assigments' , 'campaign', 'ppts'])
+        const del = (i) => {
+            var temp = [...list]
+            temp.splice(i,1)
+            setList(temp)
+        }
+        return(
+            <div style={{border: '1px solid black', padding:'10px', margin:'10px'}}>
+                <h1>Todo list</h1>
+                {
+                    list.map((e, i) => {
+                        return  <Todo todo={e} del={()=>{del(i)}} i={i}/>
+                    })
+                }
+            </div>
+        )
+       }
+
+       ReactDOM.render(<Todolist/>, document.getElementById('d'))
+     </script>
+</body>
+</html>

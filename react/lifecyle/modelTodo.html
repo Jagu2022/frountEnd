@@ -1,0 +1,81 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sorting table header click</title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <style>
+        body{
+            
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        .main{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            
+        }
+    </style>
+</head>
+<body>
+    
+    <div id="d"></div>
+    
+    <script type="text/babel">
+
+        const Additem = (props) => {
+            console.log(props)
+            
+            const[inp, setInp] = React.useState()
+            const handleIndput = (e) => {
+                setInp(e.target.value)
+
+            }
+        
+            return(
+                <div>
+                    <h3>Model heading</h3>
+                    <button onClick={()=>{props.c()}}>X</button>
+                    <input type='text' value={inp} onChange={(e)=>{handleIndput(e)}}/>
+                    <button onClick={()=>{props.c(
+                        props.b([...props.i,inp])
+                    )}}>add</button>
+                    <br/>
+                    
+                </div>
+            )
+        }
+
+        const Todos =() => {
+            
+            const[item, setItem] = React.useState(['sbk','deadpool','batman'])
+            const[show, setShow] = React.useState(false)
+            const handleShow = () => {
+                setShow(!show)
+                console.log(show)
+            }
+            return(
+                <div>
+                    <button onClick={()=>{handleShow()}}>add todo</button>
+                    {show && <Additem c = {handleShow} b={setItem} i={item}/>}
+                    <ul>
+                        {
+                            item.map((e) => {
+                                return <li>{e}</li>
+                            })
+                        }
+                    </ul>
+                    
+                </div>
+            )
+        }
+       ReactDOM.render(<Todos/>, document.getElementById('d'))
+     </script>
+</body>
+</html>

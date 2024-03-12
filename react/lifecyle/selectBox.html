@@ -1,0 +1,58 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sorting table header click</title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <style>
+        body{
+            
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        .main{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            
+        }
+    </style>
+</head>
+<body>
+    
+    <div id="d"></div>
+    
+    <script type="text/babel">
+
+        const App = () => {
+            const[name, setName] = React.useState('')
+            const[list, setList] = React.useState(['react','angular', 'javascript', 'express' ,'node.js', 'mySql', 'mongoose'])
+            const handleName = (e) => {
+                console.log(e.target.value)
+                setName(e.target.value)
+            }
+            return(
+                <div>
+                <select onChange={handleName}>
+                    <option value="null" selected disabled>Please Select A Course</option>
+                    <option  value='react' >react</option>
+                    <option  value='angular' >angular</option>
+                    <option  value='javascript' >javascript</option>
+                    <option  value='express' >express</option>
+                    <option  value='node' >node</option>   
+                    <option  value='mongoose' >mongoose</option>   
+                </select>
+                <h3>selected technology is: {name}</h3>
+                </div>
+            )
+        }
+        
+       ReactDOM.render(<App/>, document.getElementById('d'))
+     </script>
+</body>
+</html>

@@ -1,0 +1,127 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sorting table</title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <style>
+        body{
+            
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        .main{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            
+        }
+    </style>
+</head>
+<body>
+    
+    <div id="d"></div>
+    
+    <script type="text/babel">
+       
+       const Arraysrb = () => {
+
+        var [students,setStudents] = React.useState(
+        [
+          {
+            firstname:'Ravi',
+            lastname:'Sastri',
+            gender:'male'
+          },
+          {
+            firstname:'Sachin',
+            lastname:'Tendulkar',
+            gender:'male'
+          },
+          {
+            firstname:'Mithali',
+            lastname:'Raj',
+            gender:'female'
+          },
+          {
+            firstname:'Rohit',
+            lastname:'Sharma',
+            gender:'male'
+          },
+          {
+            firstname:'Smriti',
+            lastname:'Mandhana',
+            gender:'female'
+          },
+          {
+            firstname:'Virat',
+            lastname:'Kohli',
+            gender:'male'
+          },
+        ]);
+
+        const handleSort = (key, order) => {
+            console.log(key)
+            console.log(order)
+            var temp = [...students]
+            if(order == 'asc') {
+                temp.sort((a,b) => a[key].localeCompare(b[key]))
+            }else{
+                temp.sort((a,b) => b[key].localeCompare(a[key]))
+            }
+            setStudents(temp)
+        }
+
+        return(
+            <div className='main'>
+                <div>
+                    <h1>Studends</h1>
+                </div>
+                <div>
+                    
+                    <input type='radio' value='firstname' name='sort key' onClick={()=>{handleSort('firstname', 'asc')}}/>Sort by First Name (A-z)&nbsp;&nbsp;&nbsp;
+                    <input type='radio' value='firstname' name='sort key' onClick={()=>{handleSort('firstname', 'dsc')}} />Sort by First Name (z-A)
+
+
+                    <input type='radio' value='lastname' name='sort key' onClick={()=>{handleSort('lastname', 'asc')}}/>Sort by Last Name (A-z)  &nbsp;&nbsp;&nbsp;
+                    <input type='radio' value='lastname' name='sort key' onClick={()=>{handleSort('lastname', 'dsc')}}/>Sort by Last Name (z-A) 
+
+                    <input type='radio' value='gender' name='sort key' onClick={()=>{handleSort('gender', 'asc')}}/>Sort by Gender (A-z)&nbsp;&nbsp;&nbsp;
+                    <input type='radio' value='gender' name='sort key' onClick={()=>{handleSort('gender', 'dsc')}}/>Sort by Gender (z-A) 
+                    
+                </div>
+                <div>
+                    <table border='2px'>
+                        <thead>
+                            <th>firstName</th>
+                            <th>lastname</th>
+                            <th>gender</th>
+                        </thead>
+                        <tbody>
+                            {
+                                students.map((student) => {
+                                    return  <tr>
+                                                <td>{student.firstname}</td>
+                                                <td>{student.lastname}</td>
+                                                <td>{student.gender}</td>
+                                            </tr>
+                                })
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        )
+
+        }
+
+         
+       ReactDOM.render(<Arraysrb/>, document.getElementById('d'))
+     </script>
+</body>
+</html>

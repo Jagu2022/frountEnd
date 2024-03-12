@@ -1,0 +1,124 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sorting table</title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <style>
+        body{
+            
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        .main{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            
+        }
+    </style>
+</head>
+<body>
+    
+    <div id="d"></div>
+    
+    <script type="text/babel">
+       const App = () => {
+        return(
+            <div >
+                <div>
+                    <Sorttable/>
+                </div>
+            </div>
+        )
+       }
+       const Sorttable = () => {
+        var [students,setStudents] = React.useState(
+        [
+          {
+            firstname:'Ravi',
+            lastname:'Sastri',
+            gender:'male'
+          },
+          {
+            firstname:'Sachin',
+            lastname:'Tendulkar',
+            gender:'male'
+          },
+          {
+            firstname:'Mithali',
+            lastname:'Raj',
+            gender:'female'
+          },
+          {
+            firstname:'Rohit',
+            lastname:'Sharma',
+            gender:'male'
+          },
+          {
+            firstname:'Smriti',
+            lastname:'Mandhana',
+            gender:'female'
+          },
+          {
+            firstname:'Virat',
+            lastname:'Kohli',
+            gender:'male'
+          },
+        ]);
+
+          
+          const SortStudents = (key, ord) => {
+            let tempStd = [...students]
+            if(ord == 'az'){
+               var newSortStd = tempStd.sort((a, b) => a[key].localeCompare(b[key]))
+            }else{
+                var newSortStd = tempStd.sort((a, b) => b[key].localeCompare(a[key]))
+            }
+            setStudents([...tempStd])
+          }
+        return(
+            <div className='main'>
+                <div>
+                    <h1>Studends</h1>
+                </div>
+                <div>
+                    <button onClick={()=>{SortStudents('firstname', 'az')}}>sort by firstname [A-Z]</button>
+                    <button onClick={()=>{SortStudents('firstname', 'za')}}>sort by firstname [Z-A]</button>
+                    <button onClick={()=>{SortStudents('lastname', 'az')}}>sort by lastname [A-Z]</button>
+                    <button onClick={()=>{SortStudents('lastname', 'za')}}>sort by lastname [Z-A]</button>
+                    <button onClick={()=>{SortStudents('gender', 'az')}}>sort by gender [A-Z]</button>
+                    <button onClick={()=>{SortStudents('gender', 'za')}}>sort by gemder [Z-A]</button>
+                </div>
+                <div>
+                    <table border='2px'>
+                        <thead>
+                            <th>firstName</th>
+                            <th>lastname</th>
+                            <th>gender</th>
+                        </thead>
+                        <tbody>
+                            {
+                                students.map((student) => {
+                                    return  <tr>
+                                                <td>{student.firstname}</td>
+                                                <td>{student.lastname}</td>
+                                                <td>{student.gender}</td>
+                                            </tr>
+                                })
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        )
+       }
+       ReactDOM.render(<App/>, document.getElementById('d'))
+     </script>
+</body>
+</html>

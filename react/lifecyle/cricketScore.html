@@ -1,0 +1,78 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cricket score</title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <style>
+        body{
+            
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        .main{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            
+        }
+        button{
+            width: 90px;
+            height: 40px;
+            margin: 10px;
+            border: none;
+            background-color: dodgerblue;
+            color: white;
+        }
+        button:hover{
+            background-color: blue;
+        }
+    </style>
+</head>
+<body>
+    
+    <div id="d"></div>
+    
+    <script type="text/babel">
+       const Scorecard = ({onClick, value}) => {
+            return (
+                <button onClick={onClick}>{value}</button>
+            )
+       }
+       const Score = () => {
+        const [score, setScore] = React.useState(0)
+        const [wickets, setWickets] = React.useState(0)
+        
+        const wicket = () => {
+           (wickets<=9) ? setWickets(wickets+1):''
+        }
+        const handleScore = (i) => {
+            setScore(score+i)
+        }
+        return (
+            <div>
+                <h1>{score}/{wickets}</h1>
+                <Scorecard value={0} onClick={()=>{handleScore(0)}} />
+                <Scorecard value={1} onClick={()=>{handleScore(1)}} />
+                <Scorecard value={2} onClick={()=>{handleScore(2)}} />
+                <Scorecard value={3} onClick={()=>{handleScore(3)}} />
+                <Scorecard value={4} onClick={()=>{handleScore(4)}} />
+                <Scorecard value={6} onClick={()=>{handleScore(6)}} />
+
+                <Scorecard value={'wicket'} onClick={()=>{wicket(1)}} />
+                <Scorecard value={'wide'} onClick={()=>{handleScore(1)}} />
+                <Scorecard value={'no ball'} onClick={()=>{handleScore(1)}} />
+                
+            </div>
+        )
+       }
+       
+       ReactDOM.render(<Score/>, document.getElementById('d'))
+     </script>
+</body>
+</html>
