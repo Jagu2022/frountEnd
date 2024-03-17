@@ -1,0 +1,84 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Closure genreationoftable</title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <style>
+        body{
+            
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        .main{
+            display: flex;
+            justify-content: space-evenly;
+            flex-wrap: wrap;
+            
+        }
+    </style>
+</head>
+<body>
+    
+    <div id="d"></div>
+    
+    <script type="text/babel">
+        
+
+        const App = () => {
+            const [user, setUser] = React.useState({
+                name: '',
+                password: ''
+            })
+
+            const [Error, setError] = React.useState({})
+           
+            const sub = (e) => {
+                e.preventDefault()
+                console.log(user.name)
+                console.log(user.password)
+                const validationError = {}
+                if(!user.name.trim()){
+                    validationError.name = 'user name is required'
+                }else{
+                    validationError.name = 'valid'
+                }
+                if(!user.password.trim()){
+                    validationError.password = 'password is required'
+                }else{
+                    validationError.password = 'valid'
+                }
+                setError(validationError)
+                console.log(Error)
+            }
+            
+            return (
+                <div>
+                    <form>
+                        <div>
+                            <label>USer Name:</label>
+                            <input value={user.name} onChange={(e)=>{setUser({...user,name:e.target.value})}}  type='text' placeholder='enter user name'/>
+                            <div class="valid-feedback">Valid.</div>
+                            <div class="invalid-feedback">Please fill out this field.</div>
+                            {Error.name && <h3>{Error.name}</h3>}
+                        </div>
+                        <div>
+                            <label>USer Name:</label>
+                            <input type='text' onChange={(e)=>{setUser({...user,password:e.target.value})}} placeholder='password'/>
+                            <div class="valid-feedback">Valid.</div>
+                            <div class="invalid-feedback">Please fill out this field.</div>
+                            {Error.password && <h3 >{Error.password}</h3>}
+                        </div>
+                        <button onClick={(e)=>{sub(e)}}>Save</button>
+                    </form>
+                </div>
+            )
+        }
+       ReactDOM.render(<App/>, document.getElementById('d'))
+     </script>
+</body>
+</html>

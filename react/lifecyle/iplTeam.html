@@ -1,0 +1,79 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text-box data binding</title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <style>
+        body{
+            
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        .main{
+            display: flex;
+            justify-content: space-evenly;
+            flex-wrap: wrap;
+            
+        }
+    </style>
+</head>
+<body>
+    
+    <div id="d"></div>
+    
+    <script type="text/babel">
+        const App = () => {
+            const[players, setPlayers] = React.useState([
+            'rohit',
+            'surya',
+            'virat kohli',
+            'bhumra',
+            'archer',
+            'maxwell',
+            'green',
+            'tim david',
+            'tilak',
+            'fab'
+            ])
+            const[select, setSelect] = React.useState([])
+            const handlePly = (i) => {
+                var ply = players.splice(i,1)
+                console.log(ply)
+                setSelect([...select,ply])
+            }
+            const handlePly2 = (i) => {
+                var ply = select.splice(i,1)
+                console.log(ply)
+                setPlayers([...players,ply])
+            }
+            return(
+                <div className='main'>
+                    <div style={{border:'1px solid black', padding:'10px'}}>
+                        <h3>player remaining</h3>
+                        {
+                            players.map((e,i) => {
+                                return <li onClick={()=>{handlePly(i)}}>{e}-{i}</li>
+                            })
+                        }
+                    </div>
+                    <div style={{border:'1px solid black', padding:'10px'}}>
+                        <h3>player remaining</h3>
+                        {
+                            select.map((e,i)=>{
+                                return <li onClick={()=>{handlePly2(i)}}>{e}</li>
+                            })
+                        }
+                    </div>
+                </div>
+            )
+        }            
+       
+       ReactDOM.render(<App/>, document.getElementById('d'))
+     </script>
+</body>
+</html>

@@ -1,0 +1,68 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rating app</title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <style>
+        body{
+            
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        .main{
+            display: flex;
+            justify-content: space-evenly;
+            flex-wrap: wrap;
+            
+        }
+    </style>
+</head>
+<body>
+    
+    <div id="d"></div>
+    
+    <script type="text/babel">
+        
+
+        const App = () => {
+            const[rating, setRating] = React.useState(0)
+            const rate = (r) => {
+                var allspans=document.getElementsByTagName('span');
+                console.log(allspans)
+                setRating(r)
+
+                for(var i=0; i<=4; i++){
+                    allspans[i].innerHTML = "&#9734;"
+                    console.log(i)
+                }
+                for(var i=0;i<=r-1;i++){
+                    allspans[i].innerHTML="&#9733;"
+                    console.log(i)
+                }
+            }
+            return(
+                <div>
+                    <div>
+                        <span onClick={()=>{rate(1)}} style={{fontSize:'30px'}}>&#9734;</span>
+                        <span onClick={()=>{rate(2)}} style={{fontSize:'30px'}}>&#9734;</span>
+                        <span onClick={()=>{rate(3)}} style={{fontSize:'30px'}}>&#9734;</span>
+                        <span onClick={()=>{rate(4)}} style={{fontSize:'30px'}}>&#9734;</span>
+                        <span onClick={()=>{rate(5)}} style={{fontSize:'30px'}}>&#9734;</span>
+                    </div>
+                    <div>
+                        <h3>Rating</h3>
+                        <h4>{rating}/5</h4>
+                    </div>
+                </div>
+            )
+        }
+       ReactDOM.render(<App/>, document.getElementById('d'))
+     </script>
+</body>
+</html>
+<!-- &#9733; -->

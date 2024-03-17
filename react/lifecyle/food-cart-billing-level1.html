@@ -1,0 +1,105 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Closure genreationoftable</title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <style>
+        body{
+            
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        .main{
+            display: flex;
+            justify-content: space-evenly;
+            flex-wrap: wrap;
+            
+        }
+    </style>
+</head>
+<body>
+    
+    <div id="d"></div>
+    
+    <script type="text/babel">
+        const Footcart = () => {
+            const [num, setNum] = React.useState(1)
+            const[items,setItems] = React.useState([
+                {
+                    name: 'idly',
+                    price: 20,
+                    quantiity: 1
+                },
+                {
+                    name: 'dosa',
+                    price: 40,
+                    quantiity: 1
+                },
+            ])
+
+            //const[quantiity, setQuantity] = React.useState(1)
+            const upDateQnt = (e,i) => {
+                let temp = [...items]
+                temp[i].quantiity = e.target.value
+                setItems([...temp])
+            }
+            const updateTotal = () => {
+                return items.reduce((a,b) =>{
+                    console.log(b.price*b.quantiity)
+                    return a+(b.price*b.quantiity)
+                },0)
+            }
+            
+            const inc = (i) => {
+                let temp = [...items]
+                temp[i].quantiity++
+                setItems([...temp])
+                
+            }
+            const dec = (i) => {
+                let temp = [...items]
+                temp[i].quantiity--
+                setItems([...temp])
+                
+            }
+            return(
+                <div>
+                    <table border='2px'>
+                        <thead>
+                            <th>Name</th>
+                            <th>Price</th>
+                            <th>Quantity</th>
+                            <th>Total</th>
+                        </thead>
+                        <tbody>
+                            {
+                                items.map((item, i) => {
+                                    return  <tr>
+                                                <td>{item.name}</td>
+                                                <td>{item.price}</td>
+                                                <td><button onClick={()=>{dec(i)}}>dec</button><input type='text' value={item.quantiity} onChange={(e)=>{upDateQnt(e,i)}} /><button onClick={()=>{inc(i)}}>inc</button></td>
+                                                
+                                                <td>{item.price*item.quantiity}</td>
+                                            </tr>
+                                })
+                            }
+                            
+                        </tbody>
+                        <tfoot>
+                            <th>
+                                total: {updateTotal()}
+                            </th>
+                        </tfoot>
+                    </table>
+                </div>
+            )
+        }
+       ReactDOM.render(<Footcart/>, document.getElementById('d'))
+     </script>
+</body>
+</html>
