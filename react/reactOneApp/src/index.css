@@ -1,0 +1,25 @@
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  
+}
+.container{
+  display: grid;
+  grid-template-columns: auto auto auto;
+  
+  align-items: center;
+  justify-content: center;
+}
+.container li {
+  min-height: 150px;
+  border: 1px solid black;
+  margin: 10px;
+  list-style: none;
+  padding: 10px;
+  box-shadow: 1px 5px 10px 5px lightgray;
+  
+}
+.blk{
+  position: sticky;
+  top: 0;
+  width: 50%;
+}

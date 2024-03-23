@@ -1,0 +1,109 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <style>
+        body{
+            
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        .main{
+            display: flex;
+            justify-content: space-evenly;
+            flex-wrap: wrap;
+            
+        }
+    </style>
+</head>
+<body>
+    
+    <div id="d"></div>
+    
+    <script type="text/babel">
+        
+        const App = () => {
+            const [allteams, setAllteams] = React.useState([
+                {
+                teamname:'Mumbai Indians',
+                players:[
+                    'Rohit',
+                    'surya',
+                    'kishan',
+                    'bhumra',
+                    'david'
+                ]
+                },
+                {
+                teamname:'Royal Challengers Bengaluru',
+                players:[
+                    'Faf',
+                    'Virat',
+                    'DK',
+                    'Maxi',
+                    'Siraj'
+                ]
+                },
+                {
+                teamname:'Sunrisers Hyderabad',
+                players:[
+                    'Kane Williamson',
+                    'Manish',
+                    'Bhuvi',
+                    'Warner',
+                    'Karan'
+                ]
+                },
+                {
+                teamname:'Chennai Super Kings',
+                players:[
+                    'Dhoni',
+                    'Raina',
+                    'Jadeja',
+                    'Rayudu',
+                    'Ben Stokes'
+                ]
+                }
+            ])
+            return(
+                <div style={{border:'2px solid black', padding:'10px', margin:'10px'}}>
+                    <h1>ipl teams</h1>
+                    <div>
+                        {
+                            allteams.map((team) => {
+                                return <Players teamname={team.teamname} players={team.players} />
+                            })
+                        }
+                    </div>
+                </div>
+
+            )
+        }
+
+        const Players = (props) => {
+            const {teamname, players} = props
+           
+            return(
+                <div style={{border:'2px solid black', padding:'10px', margin:'10px'}}>
+                    <h3>{teamname}</h3>
+                    <ul>
+                        {
+                            players.map((e) => {
+                                return <li key={Math.random()}>{e}</li>
+                            })
+                        }
+                    </ul>
+                </div>
+            )
+        }
+       ReactDOM.render(<App/>, document.getElementById('d'))
+     </script>
+</body>
+</html>
+<!-- &#9733; -->

@@ -1,0 +1,78 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <style>
+        body{
+            
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        .main{
+            display: flex;
+            justify-content: space-evenly;
+            flex-wrap: wrap;
+            
+        }
+    </style>
+</head>
+<body>
+    
+    <div id="d"></div>
+    
+    <script type="text/babel">
+        
+        const App = () => {
+            const[item, setItem] = React.useState(['clear bills', 'gold bill', 'current bill'])
+            const[task, setTask] = React.useState([])
+
+            const handleInp =(e) => {
+                var newITem = e.target.value
+                setTask(newITem)
+            }
+            const handleSub = () => {
+                setItem([...item,task])
+                setTask('')
+            }
+            return(
+                <div>
+                    <h1>TodoList</h1>
+                    <input type='text' value={task} onChange={(e)=>{handleInp(e)}}/>
+                    <button onClick={handleSub}>Add Task</button>
+                    {
+                        item.map((e, i) => {
+                            return <TodoList list={e} index = {i}/>
+                        })
+                    }
+                </div>
+            )
+        }
+
+        const TodoList = (props) => {
+            const {list, index} = props
+            const handleDone = (i) => {
+                
+            }
+            return(
+                <div>
+                    <li>
+                        {list}
+                        <button onClick={()=>{handleDone(index)}}>done</button>
+                        <button>undo</button>
+                    </li>
+                </div>
+            )
+        }
+
+        
+       ReactDOM.render(<App/>, document.getElementById('d'))
+     </script>
+</body>
+</html>
+<!-- &#9733; -->
