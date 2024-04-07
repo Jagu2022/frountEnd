@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <span>
+            <button onclick="inTime(event)">in</button>
+            <button onclick="outTime(event)">out</button>
+            <button onclick="totalTime(event)">total</button>
+        </span>
+        <h3>total time workedout <span id="t"></span></h3>
+        <br/>
+        <br/>
+        <h3>time log</h3>
+        <br/>
+        <br/>
+        <ul id="ul">
+
+        </ul>
+    </div>
+
+    <script>
+        var ul = document.getElementById('ul')
+        var t = document.getElementById('t')
+
+        var intime
+        var outtime
+        var totaltime
+
+        function inTime(e) {
+            console.log('in')
+            intime = new Date()
+            li = document.createElement('li')
+            li.innerHTML = `IN ${intime}`
+            ul.append(li)
+        }
+
+        
+
+        function outTime(e) {
+            console.log('out')
+            outtime = new Date()
+            li = document.createElement('li')
+            li.innerHTML = `OUT ${outtime}`
+            console.log(outtime.getTime()-intime.getTime())
+            ul.append(li)
+        }
+
+        function totalTime(e) {
+
+            console.log('total')
+            totaltime = outtime.getTime()-intime.getTime()
+
+            t.innerHTML= `${totaltime} ms`
+
+            console.log(totaltime)
+        }
+
+    </script>
+</body>
+</html>

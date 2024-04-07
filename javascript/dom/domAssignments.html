@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table,th,td{
+            border: 1px solid black;
+        }
+        
+    </style>
+</head>
+<body>
+    <!-- <h1 class="a">hello</h1>
+    <h2 class="a">edupoly</h2>
+    <p class="b">training</p>
+    <ul>
+        <li>Apple</li>
+        <li>Mango</li>
+        <li>Orange</li>
+    </ul> -->
+
+    <!-- <h1>Hello</h1>
+    <p>Edupoly</p>
+    <p>Traing</p>
+    <p>Something</p> -->
+    <!-- <table>
+        
+    </table> -->
+    <script>
+        // var h = document.querySelectorAll('.a')
+        // console.log(h)
+        // h.forEach((e) => {
+        //     console.log(e.innerHTML)
+        // })
+
+        //Store the texts of each li element in an array.
+
+        // var fruits = []
+        // var li = document.querySelectorAll('li')
+        // console.log(li)
+        // li.forEach((e) => {
+        //     fruits.push(e.innerHTML)
+        // })
+        // console.log(fruits)
+
+        //Print the text inside the first paragraph element in the console
+
+        //var p = document.querySelector('p')
+        //console.log(p.innerHTML)
+
+        //console.log(p[0].innerHTML)
+
+        //Create one h1 element and put some text into it.
+
+        // var h = document.createElement('h1')
+        // h.innerHTML = 'Bharath'
+        // h.style.color = 'red'
+        // document.body.appendChild(h)
+        
+        //Take an array of names and create a list from it
+
+        // var heros = ['deadPool', 'superman', 'batman', 'ironman', 'captionAmerica']
+        // var ul = document.querySelector('ul')
+        // console.log(ul)
+        // heros.forEach((e) => {
+        //     var li = document.createElement('li')
+        //     li.innerHTML = e
+        //     ul.append(li)
+        // })
+
+        // var n = [11,12,13,14,15,16,17]
+        // var ul = document.querySelector('ul')
+        // console.log(ul)
+        // n.forEach((e) => {
+        //    // console.log(n)
+        //     var li = document.createElement('li')
+        //     //console.log(li)
+        //     li.innerHTML = e
+        //     ul.append(li)
+        // })
+
+        //Take an array of objects and create a table form it
+
+        // var people = [
+        //     {
+        //         name: 'praveen',
+        //         age: 36,
+        //         gender: 'male',
+        //         salary: 10000,
+        //         city: 'hyd',
+        //     },
+        //     {
+        //         name: 'srikanth',
+        //         age: 32,
+        //         gender: 'male',
+        //         salary: 20000,
+        //         city: 'bangaluru',
+        //     },
+        //     {
+        //         name: 'prdeep',
+        //         age: 21,
+        //         gender: 'male',
+        //         salary: 25000,
+        //         city: 'hyd',
+        //     },
+        //     {
+        //         name: 'mounika',
+        //         age: 20,
+        //         gender: 'female',
+        //         salary: 30000,
+        //         city: 'nalgonda',
+        //     },
+        //     {
+        //         name: 'nikhil',
+        //         age: 22,
+        //         gender: 'male',
+        //         salary: 2000,
+        //         city: 'guntur',
+        //     },
+        //     {
+        //         name: 'riya',
+        //         age: 24,
+        //         gender: 'female',
+        //         salary: 40000,
+        //         city: 'indore',
+        //     }
+                
+        // ]
+        // //console.log(people)
+
+        // var t = document.querySelector('table')
+        // console.log(t)
+
+        // var trOne = document.createElement('tr')
+        // var thOne = document.createElement('th')
+        // var thTwo = document.createElement('th')
+        // var thThree = document.createElement('th')
+        // var thfour = document.createElement('th')
+        // var thFive = document.createElement('th')
+        
+        // thOne.innerHTML = 'name'
+        // thTwo.innerHTML = 'age'
+        // thThree.innerHTML = 'gender'
+        // thfour.innerHTML = 'city'
+        // thFive.innerHTML = 'salary'
+
+        // trOne.append(thOne)
+        // trOne.append(thTwo)        
+        // trOne.append(thThree)        
+        // trOne.append(thfour)        
+        // trOne.append(thFive)        
+
+        // t.append(trOne)
+        
+
+        
+        // people.forEach((e) => {
+        //     var trOne = document.createElement('tr')
+        //     //var trTwo = document.createElement('tr')
+
+        //     var tdOne = document.createElement('td')
+        //     var tdTwo = document.createElement('td')
+        //     var tdThree = document.createElement('td')
+        //     var tdFour = document.createElement('td')
+        //     var tdFive = document.createElement('td')
+
+        //     tdOne.innerHTML = e.name
+        //     tdTwo.innerHTML = e.age
+        //     tdThree.innerHTML = e.gender
+        //     tdFour.innerHTML = e.city
+        //     tdFive.innerHTML = e.salary
+
+        //     trOne.append(tdOne)
+        //     trOne.append(tdTwo)
+        //     trOne.append(tdThree)
+        //     trOne.append(tdFour)
+        //     trOne.append(tdFive)
+
+        //     t.append(trOne)
+        //    // t.append(trTwo)
+        // })
+
+        // var ia = [
+        //     'https://images.unsplash.com/photo-1707344088547-3cf7cea5ca49?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+        //     'https://plus.unsplash.com/premium_photo-1707988178080-1410d2423487?q=80&w=387&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+        //     'https://images.unsplash.com/photo-1682687220866-c856f566f1bd?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
+        // ]
+        // ia.forEach((e) => {
+        //    // console.log(e)
+        //     var i = document.createElement('img')
+        //     console.log(i)
+        //     i.src = `${e}`
+        //     document.body.appendChild(i)
+        // })
+
+    </script>
+</body>
+</html>

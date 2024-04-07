@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <input onkeyup="n(event)" type="text" required/>
+        <button onclick="btn(event)">sub</button>
+    </form>
+    <script>
+        var name 
+        var war 
+        function n(a){
+            console.log(a)
+            name = a.target.value
+            war = a.target.oninvalid = 'ji'
+            
+        }
+        function btn(e){
+
+           //e.preventDefault()
+        }
+        
+    </script>
+</body>
+</html>

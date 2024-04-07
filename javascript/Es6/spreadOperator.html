@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>spread operator</h1>
+    <script>
+        // var ar = [58, 47, 102]
+        // var br = ar
+        // var cr = ar.concat([])
+        // var dr = [...ar]
+        // ar[1] = 'bharath'
+        // // console.log(ar)
+        // // console.log(br)
+        // // console.log(cr)
+        // // console.log(dr)
+
+        // var obj1 = {
+        //     name: 'bharath',
+        //     age: 24,
+        //     city: ' tirupati'
+        // }
+        // var obj2 = {}
+        // var obj3 = {...obj1}
+        // for(var k in obj1){
+        //     obj2[k] = obj1[k]
+            
+        // }
+        // // console.log(obj2)
+        // // console.log(obj3)
+
+        // var ar1 = [15,89,52,'kumar']
+        // var br1 = ['bharath']
+        // var cr1 = [...ar1, ...br1]
+        // console.log(cr1)
+
+        function abc(...c){
+            //rest parameter
+            console.log(c)
+            //return a+b+c
+        }
+        console.log(abc(10,20,30))
+        console.log(abc(10,20))
+        console.log(abc(10,20,40,30,50))
+
+    </script>
+</body>
+</html>

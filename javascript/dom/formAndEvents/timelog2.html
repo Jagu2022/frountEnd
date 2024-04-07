@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="d"></h1>
+    <h1 id="t"></h1>
+    <span>
+        <button onclick="checkIn(event)">check in</button>
+        <button onclick="checkOut(event)">check out</button>
+    </span>
+    <h3>total times:</h3>
+    <h1 id="total"></h1>
+    <script>
+
+        var intime
+        var outtime
+        var totaltime = 0
+        var d = document.getElementById('d')
+        var t = document.getElementById('t')
+        var ts = document.getElementById('total')
+
+        d.innerHTML = new Date().toLocaleDateString()
+        //t.innerHTML = new Date().toLocaleTimeString()
+
+        function clock(){
+            t.innerHTML = new Date().toLocaleTimeString()
+            
+            setTimeout(clock,1000)
+        }
+        clock()
+
+        function checkIn(e) {
+            intime = new Date().getSeconds()
+            console.log(intime)
+        }
+
+        function checkOut(e) {
+            outtime = new Date().getSeconds()
+            sec = outtime -intime
+
+            totaltime+=sec
+            
+            ts.innerHTML = `${totaltime} Seconds`
+            console.log(outtime)
+        }
+    </script>
+</body>
+</html>

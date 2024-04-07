@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1{
+            color: red;
+        }
+        img{
+            height: 200px;
+            width: 210px;
+        }
+        .d1{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        button{
+            background-color: yellow;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="d1">
+        <div><h1>image Carousel</h1></div>
+        <div><img src="pic1.jpg" id="i"/></div>
+        <div>
+            <button onclick="prv(event)">prv</button>
+            <button onclick="nxt(event)">nxt</button>
+        </div>
+    </div>
+    <script>
+        var i = document.getElementById('i')
+        console.log(i)
+        const prv = (e) => {
+            console.log('previous')
+            if(i.src.match('pic2.jpg')) {
+                i.src = 'pic1.jpg'
+            }else{
+                if(i.src.match('pic3.jpg')) {
+                    i.src= 'pic2.jpg'
+                }
+            }
+        }
+
+        const nxt = (e) => {
+            console.log('nxt')
+            if(i.src.match('pic1.jpg')){
+                i.src = 'pic2.jpg'
+            }else{
+                if(i.src.match('pic2.jpg')){
+                    i.src = 'pic3.jpg'
+                }
+            }
+        }
+    </script>
+</body>
+</html>

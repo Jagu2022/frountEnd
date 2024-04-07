@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>literacy</h1>
+    <!---
+    In a town, the percentage of men is 52. 
+    The percentage of total literacy is 48. 
+    If total percentage of literate men is 35 of the total population, 
+    write a program to find the total number 48
+    Let Us C of illiterate men and women 
+    if the population of the town is 80,000.
+    -->
+    <script>
+        var t = 80000
+        var m = 52 * t /100
+        var w = t - m
+        var literacy = 48 * t / 100
+        var lm = 35 * t / 100
+        var lw = literacy - lm
+        var ilm = m - lm
+        var ilw = w -lw
+        console.log(`total population = ${t}`)
+        console.log(`men population = ${m}`)
+        console.log(`women population = ${w}`)
+        console.log(`literacy population = ${literacy}`)
+        console.log(`literacy men = ${lm}`)
+        console.log(`literacy women population = ${lw}`)
+        console.log(`illiterate men population = ${ilm}`)
+        console.log(`illiterate women population = ${ilw}`)
+    </script>
+</body>
+</html>

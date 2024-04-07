@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="check(event)">check</button>
+    <br/>
+    <br/>
+    <span id="one">12</span><span id="two">></span><span id="three">3</span>
+    <br/>
+    <br/>
+    <button id="btnOne" onclick="btnOne()">></button>
+    <button onclick="btnTwo()">=</button>
+    <button onclick="btnThree()"><</button>
+    <p id="result"></p>
+    <script>
+
+        var one = document.getElementById('one')
+        var two = document.getElementById('two')
+        var three = document.getElementById('three')
+        var r = document.getElementById('result')
+        var b1 = document.getElementById('btnOne')
+        var b2 = document.getElementById('btnTwo')
+        var b3 = document.getElementById('btnThree')
+
+
+        const n1 = (min,max) => {
+            return Math.floor(Math.random() * (max -min)) + min
+        }
+        var nOne = n1(1,10)
+        console.log(nOne)
+
+        const n2 = (min,max) => {
+            return Math.floor(Math.random() * (max -min)) + min
+        }
+        var nTwo = n2(1,10)
+        console.log(nTwo)
+
+        one.innerHTML = nOne
+        three.innerHTML = nTwo
+
+        console.log(two.innerText)
+
+        console.log(b1.innerText)
+
+        var cck 
+
+        function btnOne(){
+            two.innerText = '>'
+            if(nOne>nTwo){
+                cck =  true
+            }
+        }
+
+        
+        
+        function btnTwo(){
+            two.innerText = '='
+            if(nOne == nTwo){
+                cck = true
+            }
+        }
+        
+        function btnThree(){
+            two.innerText = '<'
+            if(nOne < nTwo){
+                cck =  true
+            }
+        }
+        
+        function check(e) {
+            if(cck){
+                r.innerHTML = `correct`
+            }else{
+                r.innerHTML = 'wrong'
+            }
+        }
+
+    </script>
+</body>
+</html>

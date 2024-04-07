@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>likes and dislikes</title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body>
+    <div id="d"></div>
+    <script type="text/babel">
+        var students = [
+        {
+          firstname:"Praveen",
+          lastname:"Gubbala",
+          age:40,
+          gender:"male"
+        },
+        {
+          firstname:"Smrithi",
+          lastname:"mandana",
+          age:25,
+          gender:'female'
+        },
+        {
+          firstname:"mithali",
+          lastname:"raj",
+          age:39,
+          gender:'female'
+        },
+        {
+          firstname:"Rohit",
+          lastname:"Sharma",
+          age:35,
+          gender:'male'
+        },
+        {
+          firstname:"Sachin",
+          lastname:"Tendulkar",
+          age:50,
+          gender:'male'
+        },
+    ]
+        var blue = 'lightblue'
+        var pink = 'pink'
+        var border = '5px solid black'
+        var jsx = <table border='2'>
+            {
+                students.map((e) => {
+                    return(
+                        <tr style={e.gender == 'male' ? {backgroundColor: blue} : {backgroundColor: pink}}>
+                            <td>{e.firstname}</td>
+                            <td>{e.lastname}</td>
+                            <td>{e.age}</td>
+                            <td>{e.gender}</td>
+                        </tr>
+                    ) 
+                })
+            }
+            </table>
+        ReactDOM.render(jsx, document.getElementById('d'))
+    </script>
+</body>
+</html>

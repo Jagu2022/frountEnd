@@ -1,0 +1,60 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>calculator</title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <style>
+        body{
+            
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        
+    </style>
+</head>
+<body>
+    
+    <div id="d"></div>
+    
+    <script type="text/babel">
+       const Calculator = () => {
+        const[a, setA] = React.useState()
+        const[b, setB] = React.useState()
+        const[t, setT] = React.useState(0)
+        const add = () => {
+            setT(parseInt(a)+parseInt(b))
+        }
+        const sub = () => {
+            setT(parseInt(a)-parseInt(b))
+        }
+        const mul = () => {
+            setT(parseInt(a)*parseInt(b))
+        }
+        const div = () => {
+            setT(parseInt(a)/parseInt(b))
+        }
+            return (
+                <div>
+                    <div>
+                        <input type='text' onChange={(e)=>{setA(e.target.value)}}/>
+                        <input type='text'onChange={(e)=>{setB(e.target.value)}}/>
+                        <button onClick={add}>addition</button>
+                        <button onClick={sub}>subtracton</button>
+                        <button onClick={mul}>multiply</button>
+                        <button onClick={div}>division</button>
+                    </div>
+                    <div>
+                        <h1>{t}</h1>
+                    </div>
+                </div>
+            )
+       }
+       ReactDOM.render(<Calculator/>, document.getElementById('d'))
+     </script>
+</body>
+</html>

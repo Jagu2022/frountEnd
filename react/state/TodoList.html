@@ -1,0 +1,56 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <style>
+    
+    </style>
+</head>
+<body>
+    
+    <div id="d"></div>
+    
+    <script type="text/babel">
+        
+       var TodoList = () => {
+        const [todos, setTodos] = React.useState(['bharath', 'deadpool', 'batman'])
+        const btn = () => {
+            var newTodo = document.getElementById('i').value
+            setTodos([...todos, newTodo])
+            
+        }
+        const del = (id) => {
+            console.log(todos)
+            var unDelTodos = todos.splice(id, 1)
+            setTodos([...todos])
+            console.log(todos)
+        }
+        return(
+            <div>
+                <input type='text' id='i'/>
+                <button onClick={btn}>add todo</button>
+                <ul>
+                    {
+                        todos.map((todo, i) => {
+                            return (
+                                <li key={Math.random()}>
+                                    <span>{todo}</span>
+                                    <button onClick={()=> {del(i)}}>del</button>
+                                </li>
+                            )
+                        })
+                    }
+                </ul>
+            </div>
+        )
+       }
+       ReactDOM.render(<TodoList/>, document.getElementById('d'))
+     </script>
+</body>
+</html>

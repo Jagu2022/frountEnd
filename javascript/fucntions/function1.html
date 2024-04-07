@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>functions</h1>
+    <script>
+        //function declerations
+        function p(a, b) {
+            
+            return a+b
+            
+        }
+        console.log(p(12, 122))
+
+        //fucntion expression/function literal
+
+        var sub = function(a, b) {
+            return a-b
+        }
+        var s = sub(5, 2)
+        console.log(s);
+
+        //anonymous function
+
+        (function(){
+            console.log('hi')
+        })();
+
+        //firstclass function
+       
+        function a(fb) {
+            fb()
+        }
+        a(function(){
+            console.log('this is first class fucntions')
+        })
+    </script>
+</body>
+</html>
+<!--
+    function declerations
+    function expression
+    function literal
+    anonymous function
+    self executable function
+    imediatley invoced funtion expression
+    callback funtions
+    first class funcions
+-->

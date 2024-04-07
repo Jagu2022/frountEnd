@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .d{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        h1,div,button{
+            color: red;
+        }
+        img{
+            height: 150px;
+            width: 200px;
+            margin: 10px;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="d">
+        <div >
+            <h1>show image using URL</h1>
+        </div>
+        <div>
+            <div>enter image URL</div>
+            <div>
+                <input id="img" type="text"/>
+            </div>
+        </div>
+        <div><button onclick="btn(event)">add image</button></div>
+        https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Images_in_HTML/image-with-title.png
+        <div id="g">
+            
+        </div>
+    </div>
+    <script>
+        
+        const btn = (e) => {
+            //console.log(e)
+            var g = document.getElementById('g')
+            var i = document.createElement('img')
+            var img = document.getElementById('img').value
+            console.log(img)
+            i.src = img
+            var g = document.getElementById('g')
+            g.append(i)
+        }
+        
+    </script>
+</body>
+</html>

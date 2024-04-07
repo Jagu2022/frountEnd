@@ -1,0 +1,120 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>overreacted</title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <style>
+        body{
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            padding: 0;
+            margin: 0;
+        }
+        .main{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+        }
+        .container{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 300px;
+        }
+        .main h3{
+            color: brown;
+        }
+        #dark{
+            background-color: #282c35;
+            height: 100vh;
+            width: 100vw;
+            color: white;
+        }
+        #dark h3{
+            color: brown;
+        }
+        button{
+            border-radius: 10px;
+            padding: 5px;
+            width: 40px;
+            border: none;
+        }
+        button:hover{
+            background-color: lightgray;
+        }
+    </style>
+</head>
+<body>
+    
+    <div id="d"></div>
+    
+    <script type="text/babel">
+       const articles = [
+            {
+                id: 1,
+                title: 'the WET Codbase',
+                date: new Date(2020, 9, 4),
+                length: 11,
+                snippet: `Come waste your time with me`,
+            },
+            {
+                id: 2,
+                title: 'goodby, clean code',
+                date: new Date(2019, 10, 22),
+                length: 5,
+                snippet: `Let clean code guide you. Then let it go.`,
+            },
+            {
+                id: 3,
+                title: 'my decade in review',
+                date: new Date(2018, 7, 11),
+                length: 5,
+                snippet: `A personal reflection.`,
+            },
+            {
+                id: 4,
+                title: 'what are the react team principles',
+                date: new Date(2015, 5, 4),
+                length: 5,
+                snippet: `UI Before API.`,
+            },
+            
+        ]
+        const App = () => {
+            const[theme, setTheme] = React.useState(false);
+            const btn = () => {
+                setTheme(!theme)
+                
+            }
+            return(
+                <div id= {theme? 'dark' : 'while'}>
+                    <div className='main' >
+                    <div className='container'>
+                        <div><h1>overreacted</h1></div>
+                        <div><button onClick={()=>btn()}>{theme?'OFF' : 'ON'}</button></div>
+                    </div>
+                    <div>
+                        {
+                        articles.map((article) => {
+                            return (
+                                <div>
+                                    <h3>{article.title}</h3>
+                                    <p>{article.snippet}</p>
+                                </div>
+                            )
+                        })
+                    }
+                    </div>
+                </div>
+                </div>
+            )
+        }
+       ReactDOM.render(<App/>, document.getElementById('d'))
+     </script>
+</body>
+</html>

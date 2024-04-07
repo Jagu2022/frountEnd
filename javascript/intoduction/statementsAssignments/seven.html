@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--
+        check a number divisble by 7
+    -->
+    <h1>if else statements</h1>
+    <script>
+        // var num = +prompt("enter a number: ")
+        // if(num%7 === 0) {
+        //     console.log(`${num} is divisable by 7`)
+        // }else{
+        //     console.log(`${num} is not divisable by 7`)
+        // }
+
+        // var n = 97
+        // var i = 1
+        // console.log(` the factors of ${n}`)
+        // while(i <= n) {
+        //     if(n > 96) {
+        //         console.log("not a valid number")
+        //     }
+        //     else{
+        //         if(n % i ==0 ) {
+        //             console.log(i)
+        //         }       
+        //     }
+        //     i=i+1
+        // }
+
+        // var n = 21
+        // if(n%3 == 0) {
+        //     console.log('it is multiple with 3')
+        // }else{
+        //     console.log("it is not multiple with 3")
+        // }
+
+        // var n = -1
+        // if(n>=1 || n==0) {
+        //     console.log(`${n} is posive number`)
+        // }else{
+        //     console.log(`${n} is negative posive number`)
+        // }
+
+        // var n = 984
+        // var digit = n.toString().split('')
+        // console.log(digit)
+        // for(var i=0; i<digit.length; i++){
+        //     // console.log(digit[i])
+        //     if(digit[i] == 4) {
+        //         console.log("4 was found in your number")
+        //     }
+        // }
+
+        // var n = 999
+        // if(n>=100 && n<1000) {
+        //     console.log('it is 3 digit number')
+        // }else{
+        //     console.log('it is not 3 digit number')
+        // }
+
+        // var n = 4
+        // if(n%2===0) {
+        //     console.log('it is even number')
+        // }else{
+        //     console.log('it is odd number')
+        // }
+
+        // var n1 = 5002
+        // var n2 = 5001
+        // if(n1<n2) {
+        //     console.log('n1 is least number')
+        // }else{
+        //     if(n1 === n2) {
+        //     console.log('n1 is equal to n2')
+        //     }else{
+        //         console.log('n2 is least number')
+        //     }
+        // }
+
+        // var n1 = 321
+        // var n2 = 5461
+        // var n1s = n1.toString().split('').sort().join('').toString()
+        // var n = +n1s
+        // var n2s = n2.toString().split('').sort().join('').toString()
+        // var N = +n2s
+        // console.log(n)
+        // console.log(N)
+       
+        // var a = 608
+        // var b = 608
+        // var c = 609
+        // if(a>b) {
+        //     console.log('a is greater then b & c')
+        // }else{
+        //     if(b>c) {
+        //         console.log('b is greater then a & c ')
+        //     }else{
+        //         if(a == b & b == c && c == a) {
+        //             console.log('3 values are same')
+        //         }else{
+        //             console.log('c is greater then a & b')
+        //         }
+        //     }
+        // }
+
+        // var a = 10
+        // var b = 8
+        // var c = 7
+        // var small, meddle, last
+        
+        // if(a<b && a<c) {
+        //     small = a
+        //     if(b<c){
+        //         meddle = b
+        //         last = c
+        //     }else{
+        //         meddle = c
+        //         last = b
+        //     }
+        // }else if (b<c && b<a) {
+        //     small = b
+        //     if(a<c) {
+        //         meddle = a
+        //         last = c
+        //     }else{
+        //         meddle = c
+        //         last = a
+        //     }
+        // }else{
+        //     small = c
+        //     if(a<b){
+        //         meddle = a
+        //         last = b
+        //     }else{
+        //         meddle = b
+        //         last = a
+        //     }
+        // }
+        // console.log(small,meddle,last)
+
+        // var a = 200
+        // var b = 300
+        // var c = 250
+        // var high,medium,low
+
+        // if(a>b && a>c) {
+        //     high = a
+        //     if(b>c) {
+        //         medium = b
+        //         low = c
+        //     }else{
+        //         medium = c
+        //         low = b
+        //     }
+        // }else if(b>c && b>a) {
+        //     high = b
+        //     if(c>a) {
+        //         medium = c
+        //         low = a
+        //     }else{
+        //         medium = a
+        //         low = c
+        //     }
+        // }else{
+        //     if(c>a && c>b) {
+        //         high = c
+        //         if(a>b) {
+        //             medium = a
+        //             low = b
+        //         }else{
+        //             medium = b
+        //             low = a
+        //         }
+        //     }
+        // }
+        // console.log(high,medium,low)
+
+        // var english = 90
+        // var math = 40
+        // var science = 40
+        // var total = english + math + science
+        // var percentage = total*100 / 300
+        // console.log(percentage)
+        // if(percentage>60 && percentage<100) {
+        //     console.log("distinction")
+        // }else if(percentage>50 && percentage<60) {
+        //     console.log("1st class")
+        // }else if(percentage > 50 && percentage <50){
+        //     console.log("2nd clss")
+        // }
+        // else{
+        //     console.log('fail')
+        // }
+
+        // var vowel = a,e,i,o,u
+        // //var consonants = b, c, d, f, g, h, j, k, l, m, n, p, q, r, s, t, v, w, x, y, z 
+        // var a = "a"
+        // if(a == "a" || a == "e" || a == "i" || a == "o" || a == "u") {
+        //     console.log(`${a} is vowel`)
+        // } else {
+        //     console.log( `${a} is consonants` )
+        // }
+
+        // var a = "sbk"
+        // console.log(typeof a)
+        // let regex = /^[a-zA-Z]+$/;
+
+        // if(regex.test(a)){
+        //     console.log("alphabet")
+        // }else{
+        //     console.log("not alphabet")
+        // }
+
+        // var l = "@"
+        // var specialChars = /[`!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~]/;
+        // if(l === parseInt(l)){
+        //     console.log('it is number')
+        // }else{
+        //     if(specialChars.test(l)) {
+        //         console.log('it is special character')
+        //     }else{
+        //         if(l === l.toLowerCase()) {
+        //             console.log('l is lower case')
+        //         }else{
+        //             if(l === l.toUpperCase()) {
+        //                 console.log('l is upper case')
+        //             }   
+        //         }
+        //     }
+        // }
+        
+        // var year  = 2020
+        // if(year % 4 ==0 ){
+        //     console.log(`${year} is a leap year`)
+        // }else{
+        //     console.log("it is not leap year")
+        // }
+
+        // var d = 17
+        // var date = new Date()
+        // console.log(d)
+        // if (d == date.getDate()){
+        //     console.log("it is correct")
+        // }else{
+        //     console.log('it is not correct')
+        // }
+
+        // var age = 18
+
+        // if(age >= 18 && age <= 100) {
+        //     console.log("you are eligible")
+        // }else{
+        //     console.log('you ar not eligible')
+        // }
+
+        // var n = 1
+        // if(n >= 1){
+        //     console.log('it is positvie number')
+        // }else{
+        //     if(n < 0 ){
+        //         console.log('it is negitive number')
+        //     }else(
+        //         console.log('it is zero')
+        //     )
+        // }
+
+        // var n = 190
+        // if(n % 5 ===0 && n % 11){
+        //     console.log("it is divisible by 5 & 11")
+        // }else{
+        //     console.log('it is not divisible by  5 & 11')
+        // }
+
+        // var a = prompt('enter any alphabet')
+        // let regex = /^[a-zA-Z]+$/;
+
+        // if(regex.test(a)){
+        //     if(a == "A" || a == "E" || a == "I" || a == "O" || a == "U") {
+        //         console.log("it is vowel")
+        //     }else{
+        //         console.log('it is consonant')
+        //     }
+        // }else{
+        //     console.log(`${a} is not alphabet`)
+        // }
+
+        // var l = prompt('enter any letter')
+        // var specialChars = /[`!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~]/;
+        // let regex = /^[a-zA-Z]+$/;
+
+        // if(Number(l)) {
+        //     console.log('it is number')
+        // }else{
+        //     if(specialChars.test(l)) {
+        //         console.log('it is special character')
+        //     }else{
+        //         if(regex.test(l)){
+        //             console.log('it is alphabet')
+        //         }
+        //     }
+        // }   
+
+        // var l = "sbk"
+
+        // if(l === l.toUpperCase()) {
+        //     console.log('it is upper case')
+        // }else{
+        //     if(l === l.toLowerCase()){
+        //         console.log('it is lower cse')
+        //     }
+        // }
+
+        // var w = +prompt('enter number')
+        // if(w == 0){
+        //     console.log('it is sunday')
+        // }else{
+        //     if(w == 1){
+        //         console.log('it is monday')
+        //     }else{
+        //         if(w == 2){
+        //             console.log('it is tuesday')
+        //         }else{
+        //             if(w == 3){
+        //                 console.log('it is wednesday')
+        //             }else{
+        //                 if(w === 4){
+        //                     console.log("it is thusday")
+        //                 }else{
+        //                     if(w === 5){
+        //                         console.log('it is friday')
+        //                     }else{
+        //                         if(w === 6) {
+        //                             console.log('it is saturday')
+        //                         }
+        //                     }
+        //                 }
+        //             }
+        //         }
+        //     }
+        // }
+
+        // var d1 = new Date("01/01/2024")
+        // var d2 = new Date("02/01/2024")
+        // var d3 = d2.getTime() - d1.getTime()
+        
+        // var d4 = Math.round(d3/(1000*3600*24))
+        // console.log(d4)
+
+        // var m = +prompt('enter days')
+        // if( m==1 || m==3 || m==5 || m==7 || m==8 || m==10 || m==12 ){
+        //     console.log("31 days")
+        // }else{
+        //     if(m == 4 || m == 6 || m == 9 || m == 11){
+        //             console.log('30 days')
+        //     }else{
+        //         if(m = 2){
+        //             var year = +prompt('enter year')
+        //             if(year%4 ===0){
+        //                 console.log("29 days")
+        //         }else{
+        //             console.log("28 days")
+        //         }
+        //     }
+        // }
+        // }
+        
+        // var a = 2500
+        // var fiveHundred = 0
+        // var hundred = 0
+        // var fiftys = 0
+        // var tens = 0
+        // var five = 0
+        // var one = 0
+
+        // if(a >= 500 ) {
+        //     fiveHundred = a/500 // 2500/500
+        // }
+        
+        // if(a >= 100){
+        //     hundred = a/100
+        // }
+
+        // if(a>=50){
+        //     fiftys = a/50
+        // }
+
+        // if(a >= 10){
+        //     tens = a/10
+        // }
+
+        // if(a >= 5){
+        //     five = a / 5
+        // }
+        
+        // if(a >= 1){
+        //     one = a/1
+        // }
+        
+        // console.log("500",fiveHundred)
+        // console.log("100", hundred)
+        // console.log('50', fiftys)
+        // console.log("10", tens)
+        // console.log('5', five)
+        // console.log('1', one)
+
+        // var aG = 180
+        // if(aG === 180) {
+        //     console.log("it is valid angle of triangle ")
+        // }else{
+        //     console.log("it is not vaild ")
+        // }
+
+        // var s1 = 18
+        // var s2 = 25
+        // var s3 = 50
+
+        // if(s1 == s2 && s2 == s3){
+        //     console.log("the given triangle is equilateral")
+        // }else {
+        //     if(s1 == s2 || s2 ==s3 || s3 == s1 ) {
+        //         console.log("the given triangle is isosceles")
+        //     }else{
+        //         console.log('the given triangel is scalene')
+        //     }
+        // }
+
+        // var i = 1
+        // while(i <= 10){
+        //     console.log(i)
+        //     i++
+        // }
+
+        // var i = 10
+        // while(i>0){
+        //     console.log(i)
+        //     i = i-1
+        // }
+
+        // var i = 5
+        // while(i<=15){
+        //     console.log(i)
+        //     i++
+        // }
+
+        // var i = 15
+        // while(i>=10){
+        //     console.log(i)
+        //     i--
+        // }
+
+        // var i = 1
+        // while(i<=10){
+        //     if(i % 2 == 0){
+        //         console.log(i)
+        //     }
+        //     i++
+        // }
+
+        // var i = 1
+        // while(i<=10){
+        //     if(i%2 !== 0){
+        //         console.log(i)
+        //     }
+        //     i++
+        // }
+
+        // var i = 4
+        // while(i<=20){
+        //     if(i%4 ==0){
+        //         console.log(i)
+        //     }
+        //     i++
+        // }
+
+        // var i = 6
+        // while(i<=60){
+        //     if(i%6 ===0){
+        //         console.log(i)
+        //     }
+        //     i++
+        // }
+
+        // var i = 1
+        // while(i<=10){
+        //     var s = i ** 2
+        //     console.log(s)
+        //     i=i+1
+        // }
+
+        // var i = 1 
+        // while(i<=10){
+        //     c = i**3
+        //     console.log(c)
+        //     i++
+        // }
+
+        // var f = 1
+        // var factor = 24
+        // while(f<=factor){
+        //     if(factor % f == 0){ //  24 % 1 == 24, 24 % 2 == 12, 24 % 3 == 8...
+        //         console.log(f)
+        //     }
+        //     f++
+        // }
+
+        // for(var i=1; i<=10; i++){
+        //     console.log(i)
+        // }
+        
+        // for(var i=10; i>=1; i--){
+        //     console.log(i)
+        // }
+
+        // for(var i=1; i<=10; i++){
+        //     if(i%2 ==0){
+        //         console.log(i)
+        //     }
+        // }
+        // for(var i=1; i<=10; i++){
+        //     if(i%2 !==0){
+        //         console.log(i)
+        //     }
+        // }
+
+        // for(var i=1; i<=10; i++){
+        //     var s = i*3
+        //     console.log(s)
+        // }
+
+        // for(var i=1; i<=10; i++){
+        //     var s = i*6
+        //     console.log(s)
+        // }
+        // var f = 6
+        // for(var i=0; i<=f; i++){
+        //     if(f%i == 0){
+        //         console.log(i)
+        //     }
+        // }
+
+    //     var min = 0
+    //     var max = 0
+    //     var n = 100
+    //     var i = 1
+    //     //for(var i=1; i<=n; i++){
+    //         if(i == 1) {
+    //             min = max = i  //min=max=1
+    //         }
+    //         if(n<min){
+    //             min = n
+    //         }
+    //         if(n>max){
+    //             max = n
+    //         }
+    //     //    i++
+    //   //  }
+    //     console.log('min', min)
+    //     console.log("max", max)
+
+    // for(var i=0; i<=5; i++){
+    //     if(i%2 !==0){
+    //         console.log(i)
+    //     }
+    // }
+
+    // var g = +prompt('give a number')
+    // for(var i=1;i<=g; i++){
+    //     console.log(i)
+    // }
+
+    // var n = +prompt('enter a number')
+    // for(var i=1; i<=n; i++){
+    //     if(i%2 ==0){
+    //         console.log(i)
+    //     }
+    // }
+    
+    // var n = 123456
+    // var r = Math.floor(n/10%10)
+    // console.log(r)
+
+    // var n = 465977
+    // var h = Math.floor(n/100%10)
+    // console.log(h)
+
+    // var n = 1558786
+    // var t = Math.floor(n/1000%10)
+    // console.log(t)
+
+    // var n =12586976
+    // var tt = Math.floor(n/10000%10)
+    // console.log(tt)
+
+    // var a = 4
+    // var b = 10
+    // var c
+    // if(a !==b){
+    //     c = 4/2
+    //     console.log(c)
+    //     var lcm = c * b
+    //     console.log(lcm)
+    // }
+
+    var num = 67
+    var dv = 0
+    var base = 1
+    var temp = num
+    for(;temp;){
+        var ld = temp % 10
+        console.log(ld)
+        temp = Math.floor(temp/10)
+        dv+=ld*base
+        base = base*8
+    }
+    console.log(dv)
+
+    
+    </script>
+</body>
+</html>

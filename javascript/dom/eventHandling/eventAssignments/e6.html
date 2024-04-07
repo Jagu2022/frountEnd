@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #d{
+            border: 3px solid black;
+            height: 200px;
+            width: 150px;
+        }
+        button{
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+    <div id="d">
+
+    </div>
+    <button onclick="toggle(event)">toggle</button>
+    <!-- <button onclick="on(event)" id="btn1">on</button>
+    <button onclick="on(event)" id="btn2">off</button> -->
+    <script>
+        var d = document.getElementById('d')
+       // const on = (e) => {
+            
+            // var btn1 = document.getElementById('btn1')
+            // var btn2 = document.getElementById('btn2')
+            // if(e.target.innerText === 'on'){
+            //     d.style.backgroundColor = 'yellow'
+                
+            //     btn1.style.backgroundColor = 'red'
+            //     btn2.style.backgroundColor = 'white'
+            // }else{
+            //     if(e.target.innerText == 'off'){
+            //     d.style.backgroundColor = ''
+            //     //e.target.style.backgroundColor = 'red'
+            //     btn1.style.backgroundColor = 'white'
+            //     btn2.style.backgroundColor = 'red'
+                
+            // }
+       // }
+   // }
+        const toggle = (e) => {
+            console.log('toggle')
+            
+            if(d.style.backgroundColor != 'yellow') {
+                d.style.backgroundColor = 'yellow'
+            }else{
+                d.style.backgroundColor = 'white'
+            }
+        }
+    </script>
+</body>
+</html>

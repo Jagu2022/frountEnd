@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>4 digit num</h1>
+    <script>
+        var num = 8467
+        var firstDigit
+        var lastDigit = num % 10
+        var len = num.toString().length-1
+        firstDigit = parseInt(num/Math.pow(10, len))
+        console.log(firstDigit)
+        console.log(lastDigit)
+    </script>
+</body>
+</html>

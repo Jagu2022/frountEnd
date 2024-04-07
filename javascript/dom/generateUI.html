@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>generateUI</title>
+        <style>
+            #abc{
+                border: 2px solid blue;
+                padding: 20px;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="abc">
+
+        </div>
+        <ul>
+
+        </ul>
+        <script>
+            var heros = ['deadpool', 'wolvarin', 'loki', 'ironman']
+            var x = document.createElement('h1')
+            x.innerHTML = 'welcome to marvel'
+            console.log(x)
+            //document.body.appendChild(x)
+            var y = document.querySelector('#abc')
+            y.append(x)
+
+            var z = document.querySelector('ul')
+            console.log(z)
+            heros.forEach((e) => {
+                var li = document.createElement('li')
+                li.innerHTML = e
+                z.appendChild(li)
+            })
+        </script> 
+    </body>
+</html>

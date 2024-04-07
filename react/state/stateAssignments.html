@@ -1,0 +1,64 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <style>
+    
+    </style>
+</head>
+<body>
+    
+    <div id="d"></div>
+    
+    <script type="text/babel">
+        
+       const Con = () => {
+        const[ar, setAr] = React.useState([
+            {name: 'bharath', lastName:'kumar', age: 24}, 
+            {name: 'bruce', lastName:'waine', age: 36}, 
+            {name: 'deadpool',lastName:'waine', age: 27},
+            {name: 'steve',lastName:'roges', age: 27},
+            {name: 'loki',lastName:'tva', age: 27},
+        ])
+        //const[b, setb] = React.useState('kumar')
+        const del = (id) => {
+            ar.splice(id, 1)
+            setAr([...ar])
+        }
+        return(
+            <table border ='2'>
+                <thead>
+                    <th>Firstname</th>
+                    <th>Lastname</th>
+                    <th>Age</th>
+                    <th>Options</th>
+                </thead>
+                <tbody>
+                {
+                    ar.map((e, i) => {
+                        return(
+                            <tr >
+                                <td>{e.name}</td>
+                                <td>{e.lastName}</td>
+                                <td>{e.age}</td>
+                                <td>
+                                    <button onClick={()=>{del(i)}}>delete</button>
+                                </td>
+                            </tr>
+                        )
+                    })
+                }
+                </tbody>
+            </table>
+        )
+       }
+       ReactDOM.render(<Con/>, document.getElementById('d'))
+     </script>
+</body>
+</html>

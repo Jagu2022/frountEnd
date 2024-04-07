@@ -1,0 +1,127 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reviews</title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <style>
+        body{
+            background-color: rgb(231, 226, 219);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .container{
+            
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            padding: 10px;
+        }
+        ul li{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background-color: white;
+            list-style: none;
+            margin: 15px;
+            padding: 10px;
+            width: 300px;
+            height: 300px;
+            box-shadow: 10px 5px 10px lightgray;
+            border-radius: 5px;
+        }
+        .main{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        input{
+            width: 500px;
+            height: 20px;
+            padding: 10px;
+        }
+        .inp{
+            box-shadow: 10px 5px 10px lightgray;
+            background-color: white;
+            height: 100px;
+            padding: 20px;
+            margin: 10px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    
+    <div id="d"></div>
+    
+    <script type="text/babel">
+
+        const App = () => {
+            return(
+                <div>
+                    <Cocktails/>
+                </div>
+            )
+        }
+       
+        
+       const Cocktails = () => {
+            
+            const [data, setData]=React.useState([])
+            const [inp, setInp] = React.useState('')
+            const url = `https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${inp}`
+            const api = async(url) => {
+                let response = await fetch(url)
+                let {drinks} = await response.json()
+                setData(drinks)
+                
+            }
+            React.useEffect(()=>{
+                api(url)
+            },[url])
+
+            const search = (e) => {
+                setInp(e.target.value)
+            }
+
+            return(
+                <div className='main'>
+                    <div className='inp'>
+                        <div><label>search for favorite cocktails</label></div>
+                        <input onChange={(e)=>{search(e)}} type='text'/>
+                        
+                    </div>
+                    <div>
+                        <h1>cocktails</h1>
+                    </div>
+                    <div>
+                        <ul className='container'>
+                    
+                    {
+                       data && data.map((e) => {
+            
+                            const {strDrink, idDrink, strCategory,strAlcoholic, strGlass, strDrinkThumb} = e
+                           
+                            return(
+                                <li key={idDrink}> 
+                                    <img src={strDrinkThumb} width='100px'/>
+                                    <h1>{strDrink}</h1>
+                                    <h3>{strGlass}</h3>
+                                    <p>{strAlcoholic}</p>
+                                </li>
+                            )
+                       })
+                    }
+                </ul>
+                    </div>
+                </div>
+            )
+       }
+       ReactDOM.render(<App/>, document.getElementById('d'))
+     </script>
+</body>
+</html>
+

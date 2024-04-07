@@ -1,0 +1,105 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>food ball</title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <style>
+        body{
+            
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        .main{
+            display: flex;
+            justify-content: space-evenly;
+            flex-wrap: wrap;
+            
+        }
+    </style>
+</head>
+<body>
+    
+    <div id="d"></div>
+    
+    <script type="text/babel">
+        
+        const App = () => {
+            const [teamA, setTeamA] = React.useState(['messi','neymar','pablo'])
+            const [teamB, setTeamB] = React.useState(['ronaldo','mbappe','bekham'])
+            const[count, setCount] = React.useState(0);
+            const[timer, setTime] = React.useState(null);
+            const[goalA, setGoala] = React.useState(0);
+            const[goalB, setGoalb] = React.useState(0);
+            
+
+            const teama = () => {
+                setGoala(goalA+1)
+            }
+            const teamb = () => {
+                setGoalb(goalB+1)
+            }
+            const start = () => {
+                var newTimer = setInterval(() => {
+                    setCount((count) => count+1)
+                }, 1000);
+                setTime(newTimer)
+                console.log(timer)
+            }
+
+            const pause = () => {
+                clearInterval(timer)
+            }
+
+            const reset = () => {
+                clearInterval(timer)
+                setCount(0)
+                setTime(0)
+            }
+            
+            return (
+                <div>
+                    <h1>{count}</h1>
+                    <button onClick={start}>start</button>
+                    <button onClick={pause}>pause</button>
+                    <button onClick={reset}>reset</button>
+                    <div>
+                        
+                    </div>               
+                    <div>
+                        <h1>team A</h1>
+                        <ul>
+                            {
+                            teamA.map((player) => {
+                                return <li onClick={teama}>
+                                            {player}
+                                        </li>
+                            })
+                        }
+                        </ul>
+                    </div>   
+                    <div>
+                        <h1>team B</h1>
+                        <ul>
+                            {
+                            teamB.map((player) => {
+                                return <li onClick={teamb}>{player}</li>
+                            })
+                        }
+                        </ul>
+                    </div>   
+                    <h1>Team A Goals : {goalA}</h1>      
+                    
+                    <h1>Team B Goals : {goalB}</h1>  
+                        
+                </div>
+            )
+        }
+       ReactDOM.render(<App/>, document.getElementById('d'))
+     </script>
+</body>
+</html>

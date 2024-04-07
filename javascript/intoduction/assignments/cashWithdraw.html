@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>cash withdraw</h1>
+    <!--
+        A cashier has currency notes of denominations 10, 50 and 100. 
+        If the amount to be withdrawn is input through the keyboard 
+        in hundreds, find the total number of currency notes of 
+        each denomination the cashier will have to give to 
+        the withdrawer.
+    -->
+    <script>
+        var cash = +prompt("enter cash: ")
+        var ten = cash/10
+        var fifty = cash/50
+        var hundreds = cash/100
+        console.log(`cash = ${cash}`)
+        console.log(`tens = ${ten}`)
+        console.log(`fiftys = ${fifty}`)
+        console.log(`hundreds = ${hundreds}`)
+    </script>
+</body>
+</html>

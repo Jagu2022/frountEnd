@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" placeholder="firstName" id="fn" />
+    <h3 id="h"></h3>
+    <br/>
+    <input type="text" placeholder="lastName" id="ln"/>
+    <br/>
+    <input type="number" placeholder="number" id='mn'/>
+    <br/>
+    <button onclick="btn()">update</button>
+
+    <script>
+        var fn = document.getElementById('fn')
+        var ln = document.getElementById('ln')
+        var mn = document.getElementById('mn')
+        var h = document.getElementById('h')
+        h.innerHTML = '**The above field is madatory'
+
+        const btn = () => {
+            if(fn.value.length){
+                h.style.display='none'
+            }
+            
+        }
+        
+    </script>
+</body>
+</html>

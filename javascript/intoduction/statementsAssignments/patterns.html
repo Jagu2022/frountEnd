@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>patterns</h1>
+    <ul>
+        
+    </ul>
+    <script>
+        // var n = 6
+        // var c = 1
+        // var coef = 1
+        // for(var i=n; i>=0; i--){
+        //     var r = ""
+        //     for(var j=1; j<=(n-i); j++){
+        //         r+=" "
+        //     }
+        //     for(var k=0; k<=i; k++){
+        //         if(k>0){
+        //             coef = coef * (i-k+1)/k
+        //            // console.log(coef)
+        //         }
+        //             r+=`${coef} `
+        //     }
+        //     console.log(r)
+        // }
+
+        var r 
+        var n = 10
+        for(var i=0; i<=n; i++){
+            r = ""
+            for(var j=0; j<=i*2; j++){
+                r+=' '
+            }
+            for(var k=1; k<= n-i; k++){
+                r+=k
+            }
+            for(var l=n-i-1; l>=1; l--){
+                r += `${l}  `
+            }
+            console.log(r)
+        }
+    </script>
+</body>
+</html> 

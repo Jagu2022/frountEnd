@@ -1,0 +1,142 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text-box data binding</title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <style>
+        body{
+            
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        .main{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            
+        }
+    </style>
+</head>
+<body>
+    
+    <div id="d"></div>
+    
+    <script type="text/babel">
+        const App = () => {
+            var[fname, setFname] = React.useState('')
+            var[lname, setlname] = React.useState('')
+            var[age, setAge] = React.useState('')
+            var[salary, setSalary] = React.useState('')
+            var[gender, setGender] = React.useState('')
+            var [mystudents,setMystudents] = React.useState([
+                            {
+                              "firstname": "praveen",
+                              "lastname": "gubbala",
+                              "age": 36,
+                              "gender": "female",
+                              "city": "hyd",
+                              "salary": 10000
+                            },
+                            {
+                              "firstname": "srikanth",
+                              "lastname": "gubbala",
+                              "age": 32,
+                              "gender": "male",
+                              "city": "bengaluru",
+                              "salary": 20000
+                            },
+                            {
+                              "firstname": "pradeep",
+                              "lastname": "reddy",
+                              "age": 21,
+                              "gender": "male",
+                              "city": "hyd",
+                              "salary": 25000
+                            },
+                            {
+                              "firstname": "preeti",
+                              "lastname": "haia",
+                              "age": 31,
+                              "gender": "female",
+                              "city": "delhi",
+                              "salary": 30000
+                            },
+                            {
+                              "firstname": "kiran",
+                              "lastname": "gubbala",
+                              "age": 52,
+                              "gender": "male",
+                              "city": "bengaluru",
+                              "salary": 29000
+                            },
+                            {
+                              "firstname": "jayaram",
+                              "lastname": "reddy",
+                              "age": 54,
+                              "gender": "male",
+                              "city": "mumbai",
+                              "salary": 99000
+                            }
+      ])
+        
+            const handleAdd = () => {
+                setMystudents([...mystudents,{
+                    firstname: fname,
+                    lastname: lname,
+                    age: age,
+                    salary: salary,
+                    gender: gender
+                }])
+            }
+
+            return(
+                    <div>
+                        <h1>React Students</h1>
+                        <input type='text'  onChange={(e)=>{setFname(e.target.value)}}/>
+                        <br/>
+                        <input type='text' onChange={(e)=>{setlname(e.target.value)}} />
+                        <br/>
+                        <input type='text' onChange={(e)=>{setAge(e.target.value)}} />
+                        <br/>
+                        <input type='text' onChange={(e)=>{setSalary(e.target.value)}}  />
+                        <br/>
+                        <input type='text' onChange={(e)=>{setGender(e.target.value)}} />
+                        <br/>
+                        <button onClick={handleAdd}>add student</button>
+                        
+                        <table border='2px'>
+                            <thead>
+                                <th>firstname</th>
+                                <th>lastname</th>
+                                <th>age</th>
+                                <th>salary</th>
+                                <th>gender</th>
+                            </thead>
+                            <tbody>
+                                {
+                                    mystudents.map((student) => {
+                                        return  <tr>
+                                                    <td>{student.firstname}</td>
+                                                    <td>{student.lastname}</td>
+                                                    <td>{student.age}</td>
+                                                    <td>{student.salary}</td>
+                                                    <td>{student.gender}</td>
+                                                </tr>
+                                    })
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+            )
+        }
+       
+       ReactDOM.render(<App/>, document.getElementById('d'))
+     </script>
+</body>
+</html>

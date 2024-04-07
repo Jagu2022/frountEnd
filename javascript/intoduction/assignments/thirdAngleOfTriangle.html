@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--
+        Write a JavaScript program to find the third angle of a triangle
+        if two angles are given. Expected Output : Input two angles of 
+        triangle separated by comma : 50,70 Third angle of the triangle 
+        : 60
+    -->
+    <h1>third angle of triangle</h1>
+    <script>
+        var num1, num2
+        var inp = prompt("enter two angles of triangle: ")
+        var ary = inp.split(',')
+        num1 = +ary[0]
+        num2 = +ary[1]
+        var thirdAngle = num1+num2
+        var thirdAngleTriangle = 180 - thirdAngle
+        console.log(num1, num2)
+       // console.log(thirdAngle)
+        console.log(`third angle of triangle = ${thirdAngleTriangle}`)
+    </script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>five digit numbers</h1>
+    <script>
+        var a = 145876
+        console.log(a)
+
+        var e = a % 10
+        console.log(e)
+
+        var d = (a/10)%e
+        console.log(d)
+
+        var c=(a/100)%10;
+        console.log(c)
+
+        var b=(a/1000)%10;
+        console.log(b)
+
+        var z=(a/10000);
+        console.log(z)
+        
+        console.log("%d is the sum of the digits of the number %d.", z+b+c+d+e, a);
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!---
+    Write a program in JavaScript that takes minutes as input, 
+    and display the total number of hours and minutes. Expected Output :
+     Input minutes: 546 9 Hours, 6 Minutes
+    -->
+    <h1>hours and mins</h1>
+    <script>
+        var mins = +prompt('total mins: ')
+        var  hrs = parseInt(mins/60)
+        var totalMins = mins - (60*hrs) 
+        console.log(` mins: ${mins}`)
+        console.log(` hours: ${hrs}`)
+        console.log(` minutes: ${totalMins}`)
+    </script>
+</body>
+</html>

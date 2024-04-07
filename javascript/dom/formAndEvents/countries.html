@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #ul{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        #ul li{
+            border: 2px solid black;
+            width: 200px;
+            padding: 10px;
+            margin: 10px;
+            text-align: center;
+            list-style: none;
+        }
+    </style>
+</head>
+<body>
+    <ul id="ul">
+
+    </ul>
+    <script>
+        
+        var url = 'https://restcountries.com/v3/all'
+
+        var countires = []
+        var ul = document.getElementById('ul')
+
+        const fetchAPi = async (apiURL) => {
+            var response = await fetch(apiURL)
+            var data = await response.json()
+            countires = data
+            genUI()
+        }
+        fetchAPi(url)
+
+        function genUI(){
+            countires.forEach((countire) => {
+                var nli = document.createElement('li')
+                var n = document.createElement('h2')
+                n.innerHTML = countire.name.common
+                var nimg = document.createElement('img')
+                nimg.src = countire.flags[0]
+                nimg.style.width = '150px'
+                var nh2 = document.createElement('h2')
+                var ncapital = document.createElement('h3')
+                ncapital.innerHTML = countire.capital ? countire.capital[0] : 'no capital'
+                var population = document.createElement('h3')
+                population.innerHTML = countire.population
+
+                nli.appendChild(n)
+                nli.appendChild(nimg)
+                nli.appendChild(nh2)
+                nli.appendChild(ncapital)
+                nli.appendChild(population)
+
+                ul.appendChild(nli)
+            })
+        }
+        
+            
+        
+    </script>
+</body>
+</html>

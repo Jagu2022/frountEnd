@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--
+        Write a script to display the maximum number in given three 
+        numbers using operators
+    -->
+    <h1>max of three number</h1>
+    <script>
+        var inp = prompt("enter three numbers: ")
+        var ary = inp.split(",")
+        var num1 = +ary[0]
+        var num2 = +ary[1]
+        var num3 = +ary[2]
+        var maxNum = num1 > num2 && num1>num3 ? (console.log(`num1 is max value ${num1}`)) 
+        : num2 > num3 ? (console.log(`num2 is max value ${num2}`)) : 
+          (console.log(`num3 is max value ${num3}`)) 
+
+    </script>
+</body>
+</html>

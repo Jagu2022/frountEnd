@@ -1,0 +1,74 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <style>
+    
+    </style>
+</head>
+<body>
+    
+    <div id="d"></div>
+    
+    <script type="text/babel">
+
+        var sec= 20
+        var milSec = 0
+        var interval
+      
+       const start = () => {
+        sec = 20
+        milSec = 0
+        interval = setInterval(()=> {
+            if(milSec === 0){
+               milSec=59
+                sec--
+                if(sec==-1){
+                    clearInterval(interval)
+                    milSec=0
+                    sec=0
+                }
+            }
+            else{
+                milSec--
+            }
+            document.getElementById('ss').innerHTML=sec
+            document.getElementById('ms').innerHTML=milSec
+        },1)
+        
+       }
+       const reset = () => {
+        clearInterval(interval)
+        milSec = 0
+        sec = 0
+        document.getElementById('ss').innerHTML=sec
+       document.getElementById('ms').innerHTML=milSec
+
+       }
+       const pause = () => {
+            clearInterval(interval)
+       }
+       
+       var jh1 = <div>
+                    <h1 id='h'>
+                        <span id='ss'></span>:
+                        <span id='ms'></span>
+                    </h1>
+                    <button onClick={start}>start</button>
+                    <button onClick={reset}>reset</button>
+                    <button onClick={pause}>pause</button>
+                 </div>
+      ReactDOM.render(jh1,document.getElementById("d"))
+
+      document.getElementById('ss').innerHTML=sec
+       document.getElementById('ms').innerHTML=milSec
+     </script>
+    
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!---
+    If a five-digit number is input through the keyboard, 
+    write a program to print a new number by adding one to each of 
+    its digits. For example if the number that is input is 12391 
+    then the output should be displayed as 23402.
+    -->
+    <h1>five digit number increment</h1>
+    <script>
+        var num = +prompt("enter 5 digit number: ")
+        var len = num.toString().length
+        console.log(`number length ${len}`)
+        console.log(`number: ${num}`)
+        var inc = num + 11111
+        var numLen = len == 5 ? (console.log(`inc: ${inc}`)) : console.log("please enter only 5 digit number")
+    </script>
+</body>
+</html>

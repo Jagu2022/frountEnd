@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>array assignments</h1>
+    <script>
+        //write a script to print all array values in the console.
+
+        //var arr = ['sbk',8,5,5,99]
+        //console.log(arr)
+
+        // For the Given array: [23,34,54,0,4,7] print all the Array 
+        //values using a for loop. Expected output: 23 34 54 0 4 7
+
+        // var arr = [23,34,54,0,4,7]
+        // for(var i=0; i<=arr.length-1; i++){
+        //     console.log(arr[i])
+        // }
+
+        //print all numbers in an array except the first element. 
+        //Expected output: 34 54 0 4 7
+
+        //  var arr = [23,34,54,0,4,7]
+        //  var ar = arr.shift()
+        //  console.log(ar)
+        //  console.log(arr)
+
+        //Print all elements in an array except the last element
+
+        // var arr = [23,34,54,0,4,7]
+        // var ar = arr.pop()
+        // console.log(ar)
+        // console.log(arr)
+
+        //Print all the numbers from last index to first index 
+        //Expected output: 7 4 0 54 34 23
+
+        // var arr = [23,34,54,0,4,7]
+        // arr.reverse()
+        // console.log(arr)
+
+        //Print all the numbers from last index to first index except 
+        //the first element Expected output: 4 0 54 34 23
+
+        // var arr = [23,34,54,0,4,7]
+        // var ar = arr.reverse()
+        // ar.shift()
+        // console.log(ar)
+
+        //Print all the numbers from last index to first index except 
+        //the last element Expected output: 7 4 0 54 34
+
+        // var arr = [23,34,54,0,4,7]
+        // var ar = arr.reverse()
+        // ar.pop()
+        // console.log(ar)
+
+        //Print only the last 4 elements of an array. Expected output:
+        // 54 0 4 7
+
+    //    var arr = [23,34,54,0,4,7]
+    //    // arr.splice(0,2)
+    //    arr.shift()
+    //    arr.shift()
+    //    console.log(arr)
+
+       //For the Given array: [23,34,54,10,4,7] print the minimum
+       //number in an Array. Expected output: 4
+
+    //    var arr = [23,34,54,10,4,7]
+    //    var ar = Math.min(...arr)
+    //    console.log(ar)
+
+       //For the Given array: [23,34,54,10,4,7] print the Maximum 
+       //number in an array. Expected output: 54
+
+    //    var arr = [23,34,54,10,4,7]
+    //    var ar = Math.max(...arr)
+    //    console.log(ar)
+
+    //For the Given array: [23,34,54,10,4,7] sum of all the numbers 
+    //in an Array. Expected output: 132
+
+    // var arr = [23,34,54,10,4,7]
+    // var ar = 0
+    // for(var i=0; i<=arr.length-1; i++){
+    //     ar+=arr[i]
+    // }
+    // console.log(ar)
+
+    //For the Given array: [23,34,54,10,4,7] Average of all the 
+    //numbers in an Array. Expected output: 22
+
+    // var arr = [23,34,54,10,4,7]
+    // var ar = 0
+    // for(var i=0; i<=arr.length-1; i++){
+    //     ar+=arr[i]
+    // }
+    // console.log(ar/6)
+
+    //For the Given array: [23,34,54,10,4,7] print values that are 
+    //greater than the given number. Given number: 20, Expected 
+    //output: 23,34,54
+
+    // var arr = [23,34,54,10,4,7]
+    // for(var i=0; i<=arr.length-1; i++){
+    //     if(arr[i]>=20){
+    //         console.log(arr[i])
+    //     }
+    // }
+
+    //For the Given array: [23,34,54,10,4,7] print all the even numbers
+    // in an Array. Expected output: 34,54,10,4
+
+    // var arr = [23,34,54,10,4,7]
+    // for(var i=0; i<=arr.length-1; i++){
+    //     if(arr[i]%2 == 0){
+    //         console.log(arr[i])
+    //     }
+    // }
+
+    //For the Given array: [23,34,54,10,4,7] print all the odd numbers 
+    //in an Array. Expected output: 23,7
+
+    // var arr = [23,34,54,10,4,7]
+    // for(var i=0; i<=arr.length-1; i++){
+    //     if(arr[i] % 2 !== 0){
+    //         console.log(arr[i])
+    //     }
+    // }
+
+    //For the Given array: [23,-34,-54,10,-4,7] print all the positive 
+    //numbers in an array. Expected output: 23,10,7
+
+    // var arr = [23,-34,-54,10,-4,7]
+    // //console.log(arr.length)
+    // for(var i=0; i<=arr.length-1; i++){
+    //     if(arr[i] > 0){
+    //         console.log(arr[i])
+    //     }
+    // }
+
+    //For the Given array: [23,34,54,10,4,7] search if the given number
+    // is there in an array or not. Given number: 34, Expected 
+    //output: true Given number: 26, Expected output: false
+
+    // var arr =  [23,34,54,10,4,7]
+    // console.log(arr.includes(34))
+
+    //For the Given array: [23,34,54,10,34,7,23,10,34] print the total
+    //number of times an element found in the array. Given number: 23, 
+    //Expected output: 2 Given number: 34, Expected output: 3
+    // Given number: 10, Expected output: 2 Given number: 54, 
+    //Expected output: 1
+
+    // var arr = [23,34,54,10,34,7,23,10,34]
+    // var n = 0
+    // for(var i=0; i<=arr.length-1; i++){
+    //     if(arr[i] == 54){
+    //         n++
+    //     }
+    // }
+    // console.log(n)
+
+    //For the Given array: [23,34,54,10,4,7] print index of a given 
+    //element in an Array. Given number: 23, Expected output: 0 Given 
+    //number: 34, Expected output: 1 Given number: 10, Expected output: 
+    //3 Given number: 54, Expected output: 2
+
+    // var arr = [23,34,54,10,4,7,34]
+    // var n = 23
+    // var ar = arr.indexOf(n) === 1
+    // console.log(ar)
+
+    //For the Given array: [23,34,54,10,34,7,23,10,34] eliminate 
+    //duplicates in a given array Expected output: 23,34,54,10,7
+
+    // var arr = [23,34,54,10,34,7,23,10,34]
+    // var ar = arr.filter((value, index) => {
+    //     //console.log(value)
+    //     return arr.indexOf(value) === index
+    //     //
+    // })
+    // console.log(ar)
+
+    //a program to store an array into another array var 
+    //ar = [23,34,54,10,4,7] var br = [ ] Expected output: 
+    //br = [23,34,54,10,4,7]
+
+    //Sort an array in ascending order. Given array: [23,34,54,10,4,7] 
+    //Expected output: 4,7,10,23,34,54
+    
+    // var ar = [23,34,54,10,4,7]
+    // var br = []
+    // for(var i=0; i<=ar.length-1; i++){
+    //     if(ar){
+    //         br.push(ar[i])
+    //     }
+    // }
+    // console.log('ar', ar)
+    // console.log('br', br)
+    // var cr = br.sort((a,b) => a-b)
+    // console.log('cr', cr)
+
+    //Store only even numbers of a given array in another array.
+
+    // var ar = [23,34,54,10,4,7]
+    // var arr = []
+    // for(var i=0; i<=ar.length-1; i++){
+    //     if(ar[i] % 2 == 0){
+    //         arr.push(ar[i])
+    //     }
+       
+    // }
+    // console.log(arr)
+
+    //create a duplicate array for a given array.
+
+    // var ar = [23,34,54,10,4,7]
+    // var arr = []
+
+    // for(var i=0; i<=ar.length-1; i++){
+    //     arr.push(ar[i])
+    // }
+    // console.log(arr)
+
+    //Eliminate duplicates from a array
+
+    // var ar =[23,34,54,10,34,7,23,10,34]
+    // var arr = ar.filter((value, index) => {
+    //     return ar.indexOf(value) === index
+    // })
+    // console.log(arr)
+
+    //print only the perfect squares in an array
+
+    // function isPerfectSquare(num) {
+    //    // console.log(num)
+    // return Math.sqrt(num) % 1 === 0;
+    // }
+
+    // function filterPerfectSquares(arr) {
+    //     return arr.filter(isPerfectSquare);
+    // }
+
+    // // Example usage:
+    // const numbers = [1, 4, 9, 3, 25, 24, 49, 64, 81, 100];
+    // const perfectSquares = filterPerfectSquares(numbers);
+
+    // console.log("Perfect Squares:", perfectSquares);
+
+    // var ar = [1, 4, 9, 3, 25, 24, 49, 64, 81, 100]
+    // var arr = ar.filter((num) => {
+    //     return Math.sqrt(num) % 1 === 0
+    // })
+    // console.log(arr)
+
+    //Print only the 2 digit numbers from an array
+
+    // var ar = [1, 4, 9, 3, 25, 24, 49, 64, 81, 100]
+    // for(var i=0; i<=ar.length-1; i++){
+    //     if(ar[i] >=10 || ar[i <=100]){
+    //         console.log(ar[i])
+    //     }
+    // }
+
+    //Print only multiples of 5 from an array
+
+    // var ar = [1, 4, 9, 3, 25, 24, 49, 64, 81, 100,5,10,16,20]
+    // for(var i=0; i<= ar.length-1; i++){
+    //     if(ar[i]%5 == 0){
+    //         console.log(ar[i])
+    //     }
+    // }
+
+    //Print only multiples of 2 AND 3 from an array
+
+    // var ar = [1, 4, 9, 3, 25, 24, 49, 64, 81, 100,5,10,16,20]
+    // for(var i=0; i<=ar.length-1; i++){
+    //     if(ar[i] % 2 == 0 && ar[i] %3 == 0){
+    //         console.log(ar[i])
+    //     }
+    // }
+
+    //Print only multiples of 3 OR 5 from an array
+
+    // var ar = [1, 4, 9, 3, 25, 24, 49, 64, 81, 100,5,10,16,20]
+    // for(var i=0; i<=ar.length-1; i++){
+    //     if(ar[i] % 3 ==0 || ar[i] % 5 ==0){
+    //         console.log(ar[i])
+    //     }
+    // }
+
+    //Increment 5% for all the salaries in a given array
+
+    // var ar = [5000,10000,15000,20000]
+    // var a = 1/4
+    // var b = a*5000
+    // console.log(b)
+    // console.log(a)
+    // var arr = []
+    // var s = 1/4
+    // for(var i=0; i<=ar.length-1; i++){
+    //     arr = s * ar[i] + ar[i]
+    //     console.log(arr)
+    // } 
+    
+    //For every basic salary present in the array, add 40% HRA, 92% DA, 
+    //10% Tax and display the final output
+
+    // var ar = [25000]
+    // var fortyPersent = 40/100
+    // var hra = 92/100
+    // var tax = 10/100
+    // console.log(fortyPersent)
+    // console.log(hra)
+    // console.log(tax)
+    // for(var i=0; i<=ar.length-1; i++){
+    //     console.log(ar[i])
+    //     var fp = fortyPersent * ar[i] + ar[i]
+    //     console.log(fp)
+    //     var fh = hra * ar[i] + ar[i]
+    //     console.log(fh)
+    //     var ft = tax * ar[i] + ar[i]
+    //     console.log(ft)
+    //     console.log(fp + fh + ft)
+    // }
+
+    //For every salary, deduct 10% tax for salaries less than 50000 
+    //and deduct 12% tax for salaries more than 50000
+
+    // var ar = [25000, 50000]
+    // var tax_1 = 10/100 
+    // var tax_2 = 12/100
+    // var tax_1Salary 
+    // var tax_2Salary 
+    // for(var i=0; i<=ar.length-1; i++){
+    //     if(ar[i] >= 1 && ar[i] <50000){
+    //         var b1 = ar[i]
+    //         console.log('basic salary', ar[i])
+    //         tax_1Salary =  b1 - tax_1 * b1
+    //         console.log('tax for below 50k', tax_1 * b1)
+    //         console.log(tax_1Salary)
+
+    //     }else{
+    //         if(ar[i] >= 50000){
+                
+    //             var b2 = ar[i]
+    //             console.log('basic salary', ar[i])
+    //             tax_2Salary =  b2 - tax_2 * b2
+    //             console.log('tax for above 50k', tax_2 * b2)
+    //             console.log(tax_2Salary)
+    //         }
+    //     }
+    // }
+
+    //Print only those odd numbers in a given array which are divisible 
+    //by 3.
+
+    // var ar = [1,2,3,4,5,6,7,8,9]
+    // var arr = []
+    // for(var i=0; i<=ar.length-1; i++){
+    //     if(ar[i] % 3 == 0 ){
+    //         //console.log(ar[i])
+    //         if(ar[i] % 2 !== 0){
+    //             console.log(ar[i])
+    //         }
+    //         //arr.push(ar[i])
+
+    //     }
+    // }
+
+    //Insert first 10 odd numbers in an empty array(for and while).
+
+    // var ar = []
+    // var i = 0
+    // while(i<=10){
+    //     if(i%2 !== 0){
+    //         ar.push(i)
+    //     }
+    //     i++
+    // }
+    // console.log(ar)
+
+    //Print the elements present in the second half of the array.
+
+    // var ar = [1,5,3,5,46,5,85,99]
+    // console.log(ar)
+    // var arl = parseInt(ar.length/2)
+    // console.log(arl)
+    // for(var i=ar.length-1; i>=arl; i--){
+    //     console.log(ar[i])
+    // }
+
+    //Print the greatest of all 2-digit numbers present in an array.
+
+    // var ar = [1,2,3,56,365,420,876,15]
+    // for(var i=0; i<=ar.length-1; i++){
+    //     if(ar[i] > 99){
+    //         console.log(ar[i])
+    //     }
+    // }
+
+   
+    //Write a program to remove elements from an array which are not in 
+    //the ascending order Ex: Original array: [12,34,11,56,37,98,23,67,109,45]
+    //Output : [12,34,56,98,109]
+
+    // var ar = [12,34,11,56,37,98,23,67,109,45]
+    
+    // for(var i=0; i<=ar.length-1; i++){
+    //     if(ar[i] <= ar[i-1]){
+    //         var a = ar.splice(i,1)
+    //         console.log(a)
+    //     }
+    // }
+    // console.log(ar)
+
+    //Write a program to sort the array based on the number of occurrences of 
+    //elements Ex: original array: [1,2,5,6,2,1,6,1,2,6,2,1,2]; After 
+    //the logic: [5,6,6,6,1,1,1,1,2,2,2,2,2]; //5 occurred one time,6 
+    //three times,1 occurred 4 times, 2 occurred 5 times
+
+//     var ar = [1,2,5,6,2,1,6,1,2,6,2,1,2]
+   
+//     var arr = []
+//     for(var i=0; i<=ar.length-1; i++){
+//         var c = 1
+//         for(var j=i+1; j<=ar.length-1; j++){
+
+//             if(ar[i] === ar[j]){
+
+//                 c++
+//                 ar.splice(j,1)
+//                 j--
+
+//             }
+//         }
+//         //ar[i] = {value: ar[i], occurrences:c}
+//         ar[i] = `${ar[i]}, occurrences: ${c}`
+//     }
+//    console.log(ar)
+
+    // ar.sort((a,b) =>{
+    //     if(a.occurrences === b.occurrences){
+    //         return a.value - b.value
+    //     }
+    //     return b.occurrences - a.occurrences
+    // })
+
+    // arr = ar.filter((each) => Array(each.occurrences).fill(each.value))
+    // console.log(arr)
+
+    // var ar = [19,12,23,4,15];
+    // var br = [26,37,18,79,10];
+
+    // var c = br.concat(ar)
+    // console.log(c)
+
+    // var ar = [1,2,3,7,8,9];
+    // var br = [4,5,6];
+    // var c = ar.concat(br).sort()
+    // console.log(c)
+
+    // var ar = [1,8,3,9,4,9,4,3,1,10]
+    // ar.splice(0,0,'sbk')
+    // console.log(ar)
+
+    //Remove Duplicates Items In An Array
+
+    // var ar = [1,8,3,9,4,4,5,9,4,3,1,10]
+    // console.log(ar.indexOf(4))
+    // var br = ar.filter((value, index) =>{
+    //     return ar.indexOf(value) === index
+    // })
+    // console.log(br)
+
+    // var ar = [1,8,3,9,4,4,5,9,4,3,1,10]
+    // ar.splice(1,3)
+    // console.log(ar)
+
+    // var s = "radar"
+    // var b = s[s.length-1 -0]
+    // console.log(b)
+    // // var a = Math.floor(s.length/2)
+    // // console.log(a)
+    // var isPalindrome = true
+    // for(var i=0; i<=Math.floor(s.length/2); i++){
+    //     if(s[i] !== s[s.length-1 -i]){
+    //         isPalindrome = false
+    //     }
+    // }
+    // console.log(isPalindrome)
+
+    var s = "bharath"
+    var a = s.replace(/./gi,'*')
+    console.log(a)
+    
+    </script>
+</body>
+</html> 

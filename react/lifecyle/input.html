@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <style>
+    
+    </style>
+</head>
+<body>
+    
+    <div id="d"></div>
+    
+    <script type="text/babel">
+      
+       const App = () => {
+        const[name, setName]=React.useState()
+        const[list, setList] = React.useState(['bharath', 'deadpool'])
+        const handleInput = (e) => {
+            setName(e.target.value)
+        }
+        const add = () => {
+            let newItems = name
+            setList([...list, newItems])
+            setName('')
+        }
+        const del = (i) => {
+            let newList = [...list]
+            newList.splice(i,1)
+            setList(newList)
+        }
+            return(
+                <div>
+                    <input type='text' placeholder='name' value={name} onChange={(e)=>{handleInput(e)}}/>
+                    <button onClick={add}>add</button>
+                    <hr/>
+                    {list.length === 0 && <h3>no items</h3>}
+                    {
+                        list && list.map((e,i) => {
+                            return  <li>
+                                        {e}
+                                        <button onClick={()=>{del(i)}}>del</button>
+                                    </li>
+                        })
+                    }
+                </div>
+            )
+       }
+      ReactDOM.render(<App/>,document.getElementById("d"))
+     </script>
+    
+</body>
+</html>

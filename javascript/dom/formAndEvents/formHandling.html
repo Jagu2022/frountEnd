@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table,tr,td{
+            border: 1px solid black;
+            border-collapse: collapse;
+            padding: 5px;
+        }
+        input{
+            padding: 5px;
+        }
+        h3{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <!-- <div id="d">
+        <form>
+            <div>
+                <label for="">first Name: </label>
+                <input type="text"/>
+            </div>
+            <div>
+                <label for="">last name: </label>
+                <input type="text"/>
+            </div>
+            <div>
+                <label for="">date of birth: </label>
+                <input type="date"/>
+            </div>
+            <div>
+                <p>gender: </p>
+                <label for="male">male </label>
+                <input type="radio" value="male" id="male" name="gender"/>
+                <label for="female">female</label>
+                <input type="radio" value="female" id="female" name="gender"/>
+            </div>
+            <div>
+                <p>technologies: </p>
+                <label for="html">html</label>
+                <input type="radio" value="html" name="technologies" id="html"/>
+
+                <label for="css">css</label>
+                <input type="radio" value="css" name="technologies" id="css"/>
+
+                <label for="javascript">javascript</label>
+                <input type="radio" value="javascript" name="technologies" id="javascript"/>
+
+                <label for="react">react</label>
+                <input type="radio" value="react" name="technologies" id="react"/>
+            </div>
+            <div>
+                <label for="">country: </label>
+                <input type="text"/>
+            </div>
+            <div>
+                <label for="">comments: </label>
+                <input type="text"/>
+            </div>
+            <div>
+                <button>sumbit</button>
+            </div>
+        </form>
+    </div> -->
+
+    <table id="table">
+        <tr>
+            <td>first name</td>
+            <td>
+                <input type="text" id="fname" placeholder="first name"/>
+                <h3 id="Fname">please enter your first name</h3>
+            </td>
+        </tr>
+        <tr>
+            <td>last name</td>
+            <td>
+                <input type="text" id="lname" placeholder="last name"/>
+                <h3 id="Lname">please enter your last name</h3>
+            </td>
+        </tr>
+        <tr>
+            <td>date of birth: </td>
+            <td>
+                <input type="date" id="dob" placeholder="date of birth"/>
+                <h3 id="DoB">please select your dob</h3>
+
+            </td>
+        </tr>
+        
+        <tr>
+            <td>gender: </td>
+            <td>
+                <div >
+                    
+                    <label for="male">male </label>
+                    <input type="radio" value="male" id="gender" name="gender"/>
+                    
+                    
+                    <label for="female">female</label>
+                    <input type="radio" value="female" id="gender" name="gender"/>
+                    <h3 id="Gender">please select your gender</h3>
+                </div>
+            </td>
+        </tr> 
+        <tr>
+            <td>technologies: </td>
+            <td>
+                <label >html</label>
+                <input type="radio" id="technologies" value="html"/>
+
+                <label >css</label>
+                <input type="radio" id="technologies" value="css" />
+
+                <label >javascript</label>
+                <input type="radio" id="technologies" value="javascript"/>
+
+                <label>react</label>
+                <input type="radio" id="technologies"  value="react"/>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="">country: </label>
+            </td>
+            <td>
+                <input type="text" placeholder="country" id="country"/>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="">comments: </label>
+            </td>
+            <td>
+                <input type="text" placeholder="comments" id="comments"/>
+            </td>
+        </tr>
+        
+    </table>
+    <button onclick="btn(event)">submit</button>
+    <h3 id="h"></h3>
+
+    <script>
+        // var table = document.getElementById('table')
+        // console.log(table)
+
+        var fn = document.getElementById('fname')
+        var l = document.getElementById('lname')
+
+        var g = document.querySelectorAll('#gender')
+        console.log(g)
+
+        var dob = document.getElementById('dob')
+
+        var t = document.querySelectorAll('#technologies')
+
+        var cnt = document.getElementById('country')
+        var cmt = document.getElementById('comments')
+        var h = document.getElementById('h')
+        h.style.color = 'black'
+
+        var Fn = document.getElementById('Fname')
+        var Ln = document.getElementById('Lname')
+        var DoB = document.getElementById('DoB')
+        var Gn = document.getElementById('Gender')
+
+        
+        var ar = []
+        var v 
+        var tV = []
+
+        var firstname = false
+        var lastname = false
+        var dateofbirth = false
+        var gendeR = false
+
+        
+        
+        var i = 0
+        
+        const btn = (e) => {
+            var G = g.forEach((e) =>{
+                if(e.checked){
+                    v = e.value
+                }
+            })
+
+            var T = t.forEach((e) => {
+                if(e.checked){
+                    tV.push(e.value)
+                }
+            })
+        
+
+            if(fn.value){
+                Fn.style.display = 'none'
+                firstname = true
+            }
+            if(l.value){
+                Ln.style.display = 'none'
+                lastname = true
+            }
+            if(dob.value){
+                DoB.style.display = 'none'
+                dateofbirth = true
+            }
+            if(v){
+                Gn.style.display = 'none'
+                gendeR = true
+            }
+
+            if(firstname && lastname && dateofbirth && gendeR === true){
+                genUI()
+            }
+        }
+        function genUI(){
+            
+
+            var data = {
+                firstName: fn.value,
+                lastName: l.value,
+                dateOfBirth: dob.value,
+                gender: v,
+                technologies: tV,
+                country: cnt.value,
+                comment: cmt.value,
+            }
+            ar.push(data)
+
+            
+            var js = JSON.stringify(ar)
+            h.innerText = js
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .d1{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        img{
+            height: 50px;
+            width: 50px;
+            border-radius: 50%;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="d1">
+        <div>
+            <h1 style="color: red;">add contact cards</h1>
+        </div>
+        <form>
+            <div>
+                <label>
+                    name
+                    <input id="name" type="text" />
+                </label>
+            </div>
+            <div>
+                <label>
+                    number
+                    <input id="number" type="text"/>
+                </label>
+            </div>
+            <div>
+                <label>
+                    email
+                    <input id="email" type="text"/>
+                </label>
+            </div>
+            <div>
+                <label>
+                    enter image URL
+                    <input id="image" type="text"/>
+                </label>
+            </div>
+            <div>
+                <button id="addBTn" onclick="add(event)">add contact</button>
+                
+            </div>
+        </form>
+        <button id="udBtn" onclick="udBtn(event)">update contact</button>
+        <button id="sortBn" onclick="sort(event)">sort contact</button>
+        <input  onkeyup="filBtn(event)" type="text" id="filter" placeholder="seach contact"/>
+    </div>
+
+    <div id="d2"">
+        
+    </div>
+    <script>
+          var s = document.getElementById('sortBn')
+          s.style.display = 'none'
+          var d = document.getElementById('d2')
+          var n = document.getElementById('name')
+          var number = document.getElementById('number')
+          var email = document.getElementById('email')
+          var image = document.getElementById('image')
+          var addBtn = document.getElementById('addBTn')
+          var ubtn = document.getElementById('udBtn')
+          
+
+          var ar = []
+          var currentIndex;
+          ubtn.style.display = 'none'
+          function add(e){
+            e.preventDefault()
+            var  contact = {
+                
+                'name': n.value,
+                'number': number.value,
+                'email': email.value,
+                'image': image.value,
+                
+            }
+            ar.push(contact)
+            genUI(ar)
+
+            n.value = ''
+            number.value = ''
+            email.value = ''
+            image.value = ''
+          }
+
+          function udBtn(e){
+            //e.preventDefault()
+            console.log('hi')
+            var udContact = {
+                
+                'name': n.value,
+                'number': number.value,
+                'email': email.value,
+                'image': image.value,
+                
+            }
+            ar[currentIndex] = udContact
+            genUI(ar)
+            ubtn.style.display = 'none'
+            addBtn.style.display = 'inline-block'
+
+          }
+
+          function sort(){
+            var sAr = ar
+            console.log('sort')
+            sAr.sort((a, b) => a.name.localeCompare(b.name))
+            console.log(sAr)
+            genUI(sAr)
+          }
+
+          function filBtn(e){
+            //console.log(e.target.value)
+            var fit = ar.filter((contact) => {
+                return JSON.stringify(contact).toLowerCase().includes(e.target.value.toLowerCase())
+            })
+            genUI(fit)
+          }
+
+          function genUI(arr){
+            s.style.display = 'inline-block'
+            d.innerHTML = ''
+            arr.forEach((e,i) => {
+
+                var id = document.createElement('div')
+                id.style.border = '3px solid blue'
+                id.style.margin = '5px'
+                id.style.padding = '5px'
+
+                var img = document.createElement('img')
+                img.src = e.image
+                id.append(img)
+                var nam = document.createElement('p')
+                nam.innerHTML =`name: ${e.name}`
+                id.append(nam)
+
+                var num = document.createElement('p')
+                num.innerHTML = `number: ${e.number}`
+                id.append(num)
+
+                var el = document.createElement('p')
+                el.innerHTML = `email: ${e.email}`
+                id.append(el)
+
+                var delBtn = document.createElement('button')
+                
+                delBtn.innerHTML = 'del'
+                delBtn.onclick = function(){
+                    arr.splice(i,1)
+                    genUI(arr)
+                }
+                id.append(delBtn)
+
+                var editBtn = document.createElement('button')
+                editBtn.innerHTML = 'edit'
+                editBtn.onclick = () => {
+                    currentIndex = i
+                    n.value = e.name
+                    number.value = e.number
+                    email.value = e.email
+                    image.value = e.image
+                    ubtn.style.display = 'inline-block'
+                    addBtn.style.display = 'none'
+
+                }
+                id.append(editBtn)
+                
+                d.append(id)
+
+                
+            })
+          }
+    </script>
+</body>
+</html>

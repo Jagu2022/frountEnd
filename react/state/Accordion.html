@@ -1,0 +1,91 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reviews</title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <style>
+        body{
+            background-color: rgb(140, 4, 155);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        
+    </style>
+</head>
+<body>
+    
+    <div id="d"></div>
+    
+    <script type="text/babel">
+       const questions = [
+            {
+                id: 1,
+                title: 'Do I have to allow the use of cookies?',
+                info:
+                'Unicorn vinyl poutine brooklyn, next level direct trade iceland. Shaman copper mug church-key coloring book, whatever poutine normcore fixie cred kickstarter post-ironic street art.',
+            },
+            {
+                id: 2,
+                title: 'How do I change my My Page password?',
+                info:
+                'Coloring book forage photo booth gentrify lumbersexual. Migas chillwave poutine synth shoreditch, enamel pin thundercats fashion axe roof party polaroid chartreuse.',
+            },
+            {
+                id: 3,
+                title: 'What is BankID?',
+                info:
+                'Enamel pin fam sustainable woke whatever venmo. Authentic asymmetrical put a bird on it, lumbersexual activated charcoal kinfolk banjo cred pickled sartorial.',
+            },
+            {
+                id: 4,
+                title: 'Whose birth number can I use?',
+                info:
+                'Edison bulb direct trade gentrify beard lo-fi seitan sustainable roof party franzen occupy squid. Knausgaard cronut succulents, scenester readymade shabby chic lyft. Copper mug meh vegan gentrify.',
+            },
+            {
+                id: 5,
+                title: 'When do I recieve a password ordered by letter?',
+                info:
+                'Locavore franzen fashion axe live-edge neutra irony synth af tilde shabby chic man braid chillwave waistcoat copper mug messenger bag. Banjo snackwave blog, microdosing thundercats migas vaporware viral lo-fi seitan ',
+            },
+        ]
+        const App = () => {
+            return(
+                <div className='main'>
+                    <div className='con'>
+                        <div>Questions And Answers About Login</div>
+                        <div>
+                            
+                            {
+                                questions.map((question) => {
+                                    return <Accordion key={question.id} {...question}/>
+                                })
+                            }
+                        </div>
+                    </div>
+                </div>
+            )
+        }
+
+        const Accordion = ({title, info}) => {
+           const[showInfo, setShowInfo] = React.useState(false)
+           return(
+            <div >
+                <div className='item'>
+                    <h3>{title}</h3>
+                    {showInfo && <p>{info}</p>}
+                    <button onClick={()=>{setShowInfo(!showInfo)}}>{showInfo ? '-': '+'}</button>
+                </div>
+            </div>
+           )
+
+        }
+       ReactDOM.render(<App/>, document.getElementById('d'))
+     </script>
+</body>
+</html>

@@ -1,0 +1,54 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sorting table header click</title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <style>
+        body{
+            
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        .main{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            
+        }
+    </style>
+</head>
+<body>
+    
+    <div id="d"></div>
+    
+    <script type="text/babel">
+
+        const App = () => {
+            const[gen, setGen] = React.useState()
+            const handleClick = (e) => {
+                setGen(e.target.value)
+            }
+            
+            return(
+                <div style={{border: '1px solid black', padding:'10px'}}>
+                    <input type='radio' name='gender' value='male' onClick={(e) => {handleClick(e)}}/> : male
+                    <br/>
+                    <input type='radio' name='gender' value='female' onClick={(e) => {handleClick(e)}}/> : female
+                    <br/>
+
+                    {gen==='male'&&<img width="300px" src="https://img.freepik.com/free-vector/isolated-young-handsome-man-set-different-poses-white-background-illustration_632498-658.jpg?w=1060&t=st=1676186590~exp=1676187190~hmac=f0663d518cdd991b2c733bcb6cee3940e16c5a7e3bf1bcc9895f48c4e1ee960c" />}
+                    {gen==='female'&&<img width="300px" src="https://cdn.pixabay.com/photo/2014/04/02/14/10/female-306407_1280.png" />}
+                </div>
+            )
+        }
+        
+       ReactDOM.render(<App/>, document.getElementById('d'))
+     </script>
+</body>
+</html>

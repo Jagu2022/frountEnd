@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>recursion</h1>
+    <script>
+        // var ar = [1,5,20,8,6,9]
+        // var largestValue = -Infinity
+        // var secondLargestVlaue = -Infinity
+        // ar.forEach((v,i) => {
+        //     if(v > largestValue){
+        //         secondLargestVlaue = largestValue //i 1 5 
+        //         largestValue = v // 1  5 20
+                
+        //     }else{
+        //         secondLargestVlaue = v //8 6 9
+        //     }
+            
+        // })
+        // console.log(largestValue)
+        // console.log(secondLargestVlaue)
+
+        // var ar = [-1,-2,-3,-4,-5,1,23,45,65,46]
+        // var even = 0
+        //     var odd = 0
+        // ar.forEach((v,i) => {
+            
+        //     if(v <= 0){
+        //         even++
+        //     }else{
+        //         odd++
+        //     }
+            
+        // })
+        // console.log("even", even)
+        // console.log("odd", odd)
+
+        var ar = [1,2,3,4,5,6,7]
+        console.log(ar)
+        var l = ar.length
+        var k = 10%l //3
+        //console.log(k)
+        // var reverseAr = ar.reverse()
+        // console.log(reverseAr)
+        // reverseAr.forEach((e,i) => {
+        //     if(i>k){
+        //         console.log()
+        //     }
+        // })
+        var rotateArray = ar.slice(-k).concat(ar.slice(0,-k)) //567 1234
+        console.log(rotateArray)
+    </script>
+</body>
+</html>

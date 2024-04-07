@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table,th,td{
+            border: 2px solid black;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+    <table id="table" style="width: 80%;">
+
+    </table>
+
+    <table id="table2" style="width: 80%">
+
+    </table>
+    <script>
+        var people = [
+            {
+            "firstname": "praveen",
+            "lastname": "gubbala",
+            "age": 36,
+            "gender": "male",
+            "city": "hyd",
+            "salary": 10000
+            },
+            {
+            "firstname": "srikanth",
+            "lastname": "gubbala",
+            "age": 32,
+            "gender": "male",
+            "city": "bengaluru",
+            "salary": 20000
+            },
+            {
+            "firstname": "pradeep",
+            "lastname": "reddy",
+            "age": 21,
+            "gender": "male",
+            "city": "hyd",
+            "salary": 30000
+            },
+            {
+            "firstname": "mounika",
+            "lastname": "mudiraj",
+            "age": 20,
+            "gender": "female",
+            "city": "nalgonda",
+            "salary": 30000
+            },
+            {
+            "firstname": "nikhil",
+            "lastname": "m",
+            "age": 22,
+            "gender": "male",
+            "city": "guntur",
+            "salary": 2000
+            },
+            {
+            "firstname": "riya",
+            "lastname": "bhadouria",
+            "age": 14,
+            "gender": "female",
+            "city": "indore",
+            "salary": 40000
+            }
+        ];
+                
+// Display all the people's data in a table.
+// Display all male and female people in two separate tables.
+// Display only those people in a table who are having salaries more than 20000.
+// Display only the male people who are above the age of 25.
+
+        var t = document.getElementById('table')
+        var t2 = document.getElementById('table2')
+
+        var thOne = document.createElement('th')
+        thOne.innerHTML = 'firstname'
+        t.append(thOne)
+
+        var thTwo = document.createElement('th')
+        thTwo.innerHTML = 'lastname'
+        t.append(thTwo)
+        
+        var thThree = document.createElement('th')
+        thThree.innerHTML = 'age'
+        t.append(thThree)
+        
+        var thFour = document.createElement('th')
+        thFour.innerHTML = 'gender'
+        t.append(thFour)
+        
+        var thFive = document.createElement('th')
+        thFive.innerHTML = 'city'
+        t.append(thFive)
+
+        var thSix = document.createElement('th')
+        thSix.innerHTML = 'salary'
+        t.append(thSix)
+
+        var thOne2 = document.createElement('th')
+        thOne2.innerHTML = 'firstname'
+        t2.append(thOne2)
+
+        var thTwo2 = document.createElement('th')
+        thTwo2.innerHTML = 'lastname'
+        t2.append(thTwo2)
+        
+        var thThree2 = document.createElement('th')
+        thThree2.innerHTML = 'age'
+        t2.append(thThree2)
+        
+        var thFour2 = document.createElement('th')
+        thFour2.innerHTML = 'gender'
+        t2.append(thFour2)
+        
+        var thFive2 = document.createElement('th')
+        thFive2.innerHTML = 'city'
+        t2.append(thFive2)
+
+        var thSix2 = document.createElement('th')
+        thSix2.innerHTML = 'salary'
+        t2.append(thSix2)
+
+        
+
+        people.forEach((e) => {
+        console.log(e)
+        if(e.gender === 'male' && e.age > 25) {
+            var tr = document.createElement('tr')
+            var tdOne = document.createElement('td')
+            var tdTwo = document.createElement('td')
+            var tdThree = document.createElement('td')
+            var tdFour = document.createElement('td')
+            var tdFive = document.createElement('td')
+            var tdSix = document.createElement('td')
+
+            tdOne.innerHTML = e.firstname
+            tdTwo.innerHTML = e.lastname
+            tdThree.innerHTML = e.age
+            tdFour.innerHTML = e.gender
+            tdFive.innerHTML = e.city
+            tdSix.innerHTML = e.salary
+
+            tr.append(tdOne)
+            tr.append(tdTwo)
+            tr.append(tdThree)
+            tr.append(tdFour)
+            tr.append(tdFive)
+            tr.append(tdSix)
+            t.append(tr)
+            }else{
+                if(e.gender === 'female' && e.salary > 20000){
+                    var tr = document.createElement('tr')
+                    var tdOne = document.createElement('td')
+                    var tdTwo = document.createElement('td')
+                    var tdThree = document.createElement('td')
+                    var tdFour = document.createElement('td')
+                    var tdFive = document.createElement('td')
+                    var tdSix = document.createElement('td')
+
+                    tdOne.innerHTML = e.firstname
+                    tdTwo.innerHTML = e.lastname
+                    tdThree.innerHTML = e.age
+                    tdFour.innerHTML = e.gender
+                    tdFive.innerHTML = e.city
+                    tdSix.innerHTML = e.salary
+
+                    tr.append(tdOne)
+                    tr.append(tdTwo)
+                    tr.append(tdThree)
+                    tr.append(tdFour)
+                    tr.append(tdFive)
+                    tr.append(tdSix)
+                    t2.append(tr)
+                }
+            }
+        
+        })
+				
+    </script>
+</body>
+</html>

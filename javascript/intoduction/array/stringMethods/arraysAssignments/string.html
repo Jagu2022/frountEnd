@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>work with strings</h1>
+    <script>
+        //Search all occurrences of a character in a given string.
+        // var s = 'bharathh'
+        // var l = s.length-1
+        // var occurrences = []
+        
+        // //console.log(occurrences)
+        // var count = 0
+        // for(var i=0; i<=l; i++) {
+        //     occurrences = 'h'
+        //     if(occurrences == s[i]){
+        //         console.log(s[i])
+        //         count++
+        //     }
+            
+
+        // }
+        // console.log(occurrences, count)
+        // console.log(count)
+
+        //Count occurrences of a character in a given string.
+        // var s = 'bharath'
+        // var l = s.length-1
+        // var char = 'h'
+        // var count = 0
+        // var occurences = []
+        // for(var i=0; i<=l; i++){
+        //     if(char == s[i]){
+        //         occurences.push(i)
+        //     }
+        // }
+        // var occ = occurences.join(', ')
+        // console.log(`${char} in indices of ${occ}`)
+
+    //     var s = 'bharath'
+    //     var l = s.length-1
+    //     var char = 'b'
+    //     var count = 0
+    //     var occurences = 0
+    //     for(var i=0; i<=l; i++){
+    //         if(char == s[i]){
+    //             occurences++
+    //         }
+    //     }
+    //    // var occ = occurences.join(', ')
+    //     console.log(`${char} appears ${occurences} times`)
+
+        //Find the highest frequency character in a string
+        
+        // var s = 'abbcccddddeeeee'
+        // var l= s.length-1
+        // var freq = []
+        // var maxChar
+        // var lowFreqChar
+        // var maxFreq = 0
+        // var lowFreq = Infinity
+        // for(var i=0; i<=l; i++){
+        //     var char = s.charAt(i)
+        //     if(freq[char]){
+        //         freq[char]++
+        //     }else{
+        //         freq[char] = 1
+        //     }
+        // }
+        // console.log(freq)
+        // for(char in freq){
+        //     if(freq[char] >= maxFreq) {
+        //         maxChar = char
+        //         maxFreq = freq[char]
+        //     }
+        // }
+        // console.log(maxChar)
+        // console.log(maxFreq)
+        
+        // for(char in freq){
+        //     if(freq[char] < lowFreq){
+        //         lowFreq = freq[char]
+        //         lowFreqChar = char
+        //     }
+        // }
+        // console.log(lowFreq)
+        // console.log(lowFreqChar)
+
+        //Remove the first occurrence of a character from a string.
+        // var s = 'bharath'
+        // var f =s.slice(1)
+        // var l = s.slice(0,-1 )
+        // //console.log(l)
+        // var d = s.slice(0,0)
+        // console.log(d)
+
+        //Remove all repeated characters from a given string.
+
+        // var s = 'bbjaitie;;s'
+        // var uniq = ''
+        // console.log(s)
+        // var nA = []
+        // for(var i=0; i< s.length-1; i++){
+        //     if(uniq.indexOf(s[i]) === -1) {
+        //         uniq+=s[i]
+        //     }
+        // }
+        // console.log(uniq)
+        
+        //Replace the first occurrence of a character with another in a string.
+        // var s = 'bharath'
+        // var n = s.endsWith('h')
+        // console.log(n)
+        // for(var i=0; i<=s.length-1; i++){
+            
+        // }
+        // //console.log(s)
+
+        //Find the first occurrence of a word in a given string.
+
+        //A String Is an Anagram or Not
+        // var s1 = 'bhara'
+        // var s2 = 'reddy'
+        // var result
+        // if(s1.length != s2.length){
+        //     result = 'not anagram'
+        // }else{
+        //     s1 = s1.split('').sort().join()
+        //     s2 = s2.split('').sort().join()
+        //     s1 == s2
+        //     result = 'it is anagram'
+        // }
+        // console.log(s1)
+        // console.log(s2)
+        // console.log(result)
+
+        // compare two strngs
+
+        // var s1 = 'abcd'
+        // var s2 = 'abcd'
+        // var s3 = s1.localeCompare(s2)
+        // console.log(s3)
+
+        //converst to lowercase to uppercase
+
+        // var s = 'bharath'
+        // //var s = 'bharath'
+        // console.log('original string', s)
+        // var upper = s.toUpperCase()
+        // console.log('upper sting',upper)
+        // var lower = upper.toLowerCase()
+        // console.log('lower sting', lower)
+
+        //toggel case
+
+        // var s = 'this is testing for toggle case'
+        // var m = s.toUpperCase().split(' ').map((e) => {
+        //     return e.at(0).toLowerCase() + e.slice(1)
+            
+        // })
+        // console.log(m.join(' '))
+
+        // var a = "bharath kumar"
+        // var b = a.split(' ').join(' ')
+        // console.log(b)
+
+        //Find a total number of alphabets, digits or special character in a string.
+        //a = 97-122
+        //A = 65-90
+        //! = 33-64
+        //1 = 48 - 57
+        // var s = 'bharath118$%@'
+        // console.log(String.fromCharCode(97))
+        // var a = 0
+        // var d = 0
+        // var sp = 0
+        // for(var i=0; i<=s.length-1; i++){
+        //     // if(a =String.fromCharCode(i)){
+        //     //     console.log(i,a)
+        //     // }
+        //     if(s.charCodeAt(i) >= 97 && s.charCodeAt(i) <=122){
+        //         a++
+        //     }else{
+        //         if(s.charCodeAt(i) >=48 && s.charCodeAt(i) <=57){
+        //             d++
+        //         }else{
+        //             if(s.charCodeAt(i) >=33 && s.charCodeAt(i) <= 64) {
+        //                 sp++
+        //             }
+        //         }
+        //     }
+        // }
+        // console.log('alphabets',a)
+        // console.log('digits',d)
+        // console.log("special characters",sp)
+
+        // var s = 'BhAraTHKUmar1346446'
+        // for(var i=0; i<=s.length-1 ; i++){
+        //     if(s.charCodeAt(i) >= 65 && s.charCodeAt(i) <= 122){
+        //         console.log(s[i])
+        //     }
+        // }
+
+        // var s = 'aeiousbharath'
+        // for(var i=0; i<=s.length-1; i++){
+        //     var char = s.charAt(i)
+        //     if(char === 'a' || char === 'e' || char === 'i' || char === 'o' || char === 'u'){
+        //         console.log(s[i],'it is vowels')
+        //     }else{
+        //         console.log(s[i],'it is consonants')
+        //     }
+        // }
+        
+        //reverse of a sting
+
+        // var s = 'bharath'
+        // var r = ''
+        // for(var i=s.length-1; i>=0; i--){
+        //     console.log(s[i])
+        //     r+=s[i]
+        // }
+        // console.log(r)
+
+       //Search a given string in a sentence(both uppercase and lowercase)
+    //    var s = 'this Is BHARATH kumar'
+    //    var u = ''
+    //    var l = ''
+    //    for(var i=0; i<=500; i++){
+    //     //console.log(s[i])
+    //     if(s.charCodeAt(i) >=65 && s.charCodeAt(i) <= 90){
+    //         u+=s[i]
+    //     }else{
+    //         if(s.charCodeAt(i) >=97 && s.charCodeAt(i) <= 122){
+    //             l+=s[i]
+    //         }
+            
+    //     }
+    //    }
+    //    console.log(u)
+    //    console.log(l)
+
+       //Write a program to convert a sample sentence string into an array of all the words in the sentence. Example: Input->‘Hello World’; Output->[‘Hello’,‘World’]
+
+    //    var s = 'Hello World'
+    //    var as = s.split(' ')
+    //    console.log(as)
+
+    //Write a program to eliminate all numeric characters from a string. Example: Input->‘Q1STR5684A’; Output-> ‘QSTRAK’
+
+    // var s = 'Q1STR5684AK'
+    // var r = ''
+    // for(var i=0; i<=100; i++){
+    //     if(s.charCodeAt(i) >= 65 && s.charCodeAt(i) <= 90) {
+    //         r+=s[i]
+    //     }
+    // }
+    // console.log(r)
+
+    //Write a program to take a string and print only the numeric characters. Example: Input->‘Q1STR5684AK’; Output->‘15684’
+
+    // var s = 'Q1STR5684AK'
+    // var n = ''
+    // for(var i=0; i<=s.length-1; i++){
+    //     if(s.charCodeAt(i) >= 48 && s.charCodeAt(i) <= 57) {
+    //         n+=s[i]
+    //     }
+    // }
+    // console.log(n)
+
+    //Write a program to take a string and print the number of characters in the string. Example: Input->‘Hello’; Output->5
+
+    // var s = 'Hello'
+    // console.log(s.length)
+
+    //Write a program to take a 16-digit credit card number and replace the first 12 characters with ‘X’. Example:Input->‘9765143265387960’; Output->‘XXXXXXXXXXXX7960’
+    
+    // var s = '9765143265387960'
+    // var x = 'XXXXXXXXXXXX'
+    // var n = s.slice(12)
+    // console.log(x.concat(n))
+    
+    //Write a program to take a string and replace all vowels with ‘8’. Example: Input->‘This is awesome’; Output->‘Th8s 8s 8w8s8m8’
+
+    // var s = 'This is awesome'
+    // var r = ''
+    // for(var i=0; i<=s.length-1; i++){
+    //     if(s[i] == 'a' || s[i] == 'e' || s[i] == 'i' || s[i] == '0' || s[i] == 'u') {
+    //         r+=8
+    //     }else{
+    //         r+=s[i]
+    //     }
+    // }
+    //console.log(r)
+
+    //Write a program to hide the middle six digits of a phone number. Example: Input-> '9876543210'; Output-> '98XXXXXX10'
+
+    // var s = '9876543210'
+    // var sli1 = s.slice(0,2)
+    // var sli2 = s.slice(8,10)
+    // var x = 'XXXXXX'
+
+    // console.log(sli1)
+    // console.log(sli2)
+    // var num = sli1+x+sli2
+    // console.log(num)
+
+    //Append the calling code of India(+91) to a given phone number. Example: Input-> '9876543210'; Output-> '+919876543210'
+    
+    // var n = '9876543210'
+    // var ind = '+91'
+    // console.log(ind.concat(n))
+
+    //Check whether a given number is a valid phone number.
+    //Example:Input-> '7654893274'; Output-> 'valid'
+        // Input-> '785487438754'; Output-> 'invalid'.........(must be 10 digits)
+        // Input-> '7854s54839'; Output-> 'invalid'.............(must NOT contain letters)
+    // var n = '1234567898'
+    // console.log(n.length)
+    // console.log(n)
+    // var valid
+    // for(var i=0; i<=n.length-1; i++){
+    //     if(n.length != 10){
+    //         valid = 'must be 10 digits'
+    //     }else{
+    //         if(n.charCodeAt(i) >= 48 && n.charCodeAt(i) <= 57 ){
+    //             valid = 'valid'
+    //         }else{
+    //             if(n.charCodeAt(i) >= 1 && n.charCodeAt(i) <= 122){
+    //                 valid = 'must NOT contain letters'
+    //             }
+    //         }
+    //     }
+        
+    // }
+    // console.log(valid)
+
+    //Check whether a given number is a valid credit card number. Example:
+    // Example:
+    //     Input-> '7463836483647454'; Output-> 'valid'
+    //     Input-> '74638364836474548'; Output-> 'invalid'...(must be 16 digits)
+    //     Input-> '7463836w4836o745'; Output-> 'invalid'...(must contain only numbers)
+    
+    // var n = '7463836483647458'
+    // var valid
+    // for(var i=0; i<=n.length-1; i++){
+    //     if(n.length != 16){
+    //         valid = 'must be 16 digits'
+    //     }else{
+    //         if(n.charCodeAt(i) >= 67 && n.charCodeAt(i) <= 122){
+    //             valid = ' must contain only numbers'
+    //         }else{
+    //             if(n.charCodeAt(i) >= 48 && n.charCodeAt(i) <= 57) {
+    //                 valid = 'valid'
+    //             }
+    //         }
+    //     }
+    // }
+    // console.log(valid)
+
+    //Write a program to add hyphens (-) in between a given credit card number.
+    // Example:
+    //     Input-> '6484638463487486'; Output-> '6484-6384-6348-7486'
+
+    // var n = '6484638463487486'
+    // var nc = ''
+    // var sn = 3
+    // for(var i=0; i<=n.length-1; i++){
+    //     if(nc.length > sn ){
+    //         nc+='-'+n[i]
+    //         sn+=5
+    //     }else{
+    //         nc+=n[i]
+    //     }
+    // }
+    // console.log(nc)
+
+    //Sort a given string
+   // Example: ‘praveen’=>’aeenprv’
+//    var s = 'praveen'
+//    var n = s.split('').sort().join('')
+//    console.log(n)
+
+    //Eliminate Duplicate characters in given string
+    //Example: ‘praveengubbala’ => ‘pravengubl’
+
+    // var s = 'praveengubbala'
+    // //console.log(s.charAt(5))
+    // var ns = []
+    // for(var i=0; i<=s.length-1; i++){
+    //    // console.log(s[i])
+    //    var char = s.charAt(i)
+    //     if(!ns.includes(char)){
+    //         ns.push(s[i])
+    //     }
+    // }
+    // console.log(ns.join(''))
+
+    //Write a program to print only numbers out of a given string
+    // Example: let us take pr34s2v9q4
+    // The output should be 3,4,2,9,4
+    var s = 'pr34s2v9q4'
+    var n = ''
+    for(var i=0; i<=s.length-1; i++){
+        if(s.charCodeAt(i) >= 48 && s.charCodeAt(i) <= 57){
+            n+=s[i]
+        }
+    }
+    var an = n.split('').join()
+    console.log(an)
+</script>
+</body>
+</html>

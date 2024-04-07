@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="">
+        <input type="text" id="firstName" placeholder="firstname" />
+        <br/>
+        <input type="text" id="lastName" placeholder="lastname"/ >
+        <br/>
+        <input type="text" id="age" placeholder="age" />
+        <br/>
+        <button onclick="show(event)">show</button>
+    </form>
+    
+
+    <script>
+        
+
+        var sturdent = []
+
+        
+        const show = (e) => {
+             e.preventDefault()
+             var sturdents = {
+                firstName: '',
+                lastName: '',
+                age: ""
+            }
+            sturdents.firstName = document.getElementById('firstName').value
+            sturdents.lastName = document.getElementById('lastName').value
+            sturdents.age = document.getElementById('age').value
+            sturdent.push(sturdents)
+            console.log(sturdent)
+        }
+
+    </script>
+</body>
+</html>
